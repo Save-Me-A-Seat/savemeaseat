@@ -17,5 +17,11 @@
   "bugs": {
     "url": "https://github.com/Save-Me-A-Seat/savemeaseat/issues"
   },
-  "homepage": "https://github.com/Save-Me-A-Seat/savemeaseat#readme"
+  "homepage": "https://github.com/Save-Me-A-Seat/savemeaseat#readme",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "pg": "^7.4.3",
+    "superagent": "^4.0.0-beta.5"
+  }
 }
