@@ -46,7 +46,7 @@ function searchForArtist(request, response) {
 
   superagent.get(url)
     .then(upcomingEvents => upcomingEvents.body.items.map(event => new Event(event)))
-    .then(eventList => response.render('pages/search-results', { eventList: eventList }))
+    .then(eventList => response.render('pages/index', { eventList: eventList }))
     .catch(error => handleError(error, response));
 }
 
@@ -64,7 +64,7 @@ function Event(event) {
   this.venue = event.venue.name ? event.venue.name : 'Not available' ;
   this.lineup = event.lineup ? event.lineup.reduce((accumulator, currentValue) => accumulator + `, ${currentValue}`) : 'Not available';
   this.urlToBuyTickets = event.offers ? event.offers[0].url : 'Not available';
-  this.ticketAvailability = event.offers ? event.offers[0].status : 'Not available';
+  this.ticketAvailability = event.offers && event.offers[0].status === 'available' ? true : false;
 }
 
 // Error handling functions
