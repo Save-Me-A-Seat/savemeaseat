@@ -42,7 +42,7 @@ function renderSearchForm(request, response) {
 
 // Searches for the artist
 function searchForArtist(request, response) {
-  let url = `https://rest.bandsintown.com/artists/${request.body.artist}/events?app_id=${BANDS_IN_TOWN_KEY}&date=upcoming`;
+  const url = `https://rest.bandsintown.com/artists/${request.body.artist}/events?app_id=${BANDS_IN_TOWN_KEY}&date=upcoming`;
 
   superagent.get(url)
     .then(upcomingEvents => upcomingEvents.body.items.map(event => new Event(event)))
@@ -55,7 +55,7 @@ function Event(event) {
   this.month = event.datetime ? event.datetime.slice(5, 7) : 'Not available';
   this.day = event.datetime ? event.datetime.slice(8, 10) : 'Not available';
   this.year = event.datetime ? event.datetime.slice(0, 4) : 'Not available';
-  this.hour = event.datetime ? parseInt(event.datetime.slice(11, 13)) - 12 : 'Not available';
+  this.hour = event.datetime ? (parseInt(event.datetime.slice(11, 13)) - 12).toString() : 'Not available';
   this.minute = event.datetime ? event.datetime.slice(14,16) : 'Not available';
   this.amOrPm = !event.datetime ? 'Not available' : parseInt(event.datetime.slice(11, 13)) < 12 ? 'AM' : 'PM';
   this.city = event.venue.city ? event.venue.city : 'Not available';
@@ -66,34 +66,6 @@ function Event(event) {
   this.urlToBuyTickets = event.offers ? event.offers[0].url : 'Not available';
   this.ticketAvailability = event.offers ? event.offers[0].status : 'Not available';
 }
-
-
-
-  "datetime": "2018-09-30T19:00:00",
-  
-  
-
-
-
-  "venue": {
-      "country": "United States",
-      "city": "Houston",
-      "latitude": "29.7507604",
-      "name": "Toyota Center",
-      "region": "TX",
-      "longitude": "-95.3621005"
-  },
-  "lineup": [
-      "Drake",
-      "Migos",
-      "Roy Woods"
-  ],
-  "offers": [
-      {
-          "type": "Tickets",
-          "url": "https://www.bandsintown.com/t/1009790087?app_id=edge43&came_from=267&utm_medium=api&utm_source=public_api&utm_campaign=ticket",
-          "
-
 
 // Error handling functions
 app.get('*', (request, response) => response.status(404).send('This route does not exist'));
