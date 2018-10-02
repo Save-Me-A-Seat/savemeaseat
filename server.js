@@ -34,6 +34,7 @@ app.listen(PORT, () => console.log(`Listening on port: ${process.env.PORT}`));
 
 app.get('/', renderSearchForm);
 app.get('/search', searchForArtist);
+// app.post('/add-event', addEventToDatabase);
 
 // Renders index.ejs
 function renderSearchForm(request, response) {
