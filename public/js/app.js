@@ -76,8 +76,22 @@ $('.menu-bottom').on('click', function(event)
 
 
 //---------------------------------------------------------------------------------------
-//          
+//          TICKETS + SAVE BUTTONS LISTENERS
 //---------------------------------------------------------------------------------------
+
+// 'TICKETS' listener
+$('.button-tickets').on('click', function(event)
+{
+  console.log(event);
+})
+
+// 'SAVE' listener
+$('.button-saveaseat').on('click', function(event)
+{
+  console.log(event);
+})
+
+
 
 /* Variable to store the back end URL. This allows the client to make requests to *your* deployed back end, no one else's */
 // let __API_URL__;
