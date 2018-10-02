@@ -8,12 +8,11 @@
   display: grid;
   grid-auto-columns: 100%;
   grid-auto-rows: 10% 20% 60% 10%;
-/*   min-width: 10em; */
   min-height: 8em;
   margin: 0 auto;
 
 
-  background-color: #F5D547;
+  /* background-color: #F5D547; */
 }
 
 .nav-menu
@@ -30,7 +29,6 @@
 {
     display: block;
     margin: 0 auto;
-    /* text-align: center; */
     height: 2em;
 }
 
@@ -43,8 +41,12 @@
 {
 
     text-align: center;
-    /* margin: -1; */
+    
 
 }
+
+
+
+
 
 

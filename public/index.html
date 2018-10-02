@@ -6,25 +6,33 @@
     <title>Save Me A Seat</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/menu.css">
     
 </head>
 <body>
 
+    
     <header>
-       <h2>Main</h2> 
-       <nav class="nav-menu"></nav>
+       <nav class="nav-menu">
+            <ul class="menu">
+                <div class="menu-close fa fa-close"></div>
+                <li class="menu-global menu-top"><span class="menu-text">Search</span></li>
+                <li class="menu-global menu-middle"><span class="menu-text">My Events</span></li>
+                <li class="menu-global menu-bottom"><span class="menu-text">About Us</span></li>
+            </ul>
+       </nav>
     </header>
 
     <main class="wrapper">
         
 
-        <div class="search-input">
+        <!-- <div class="search-input">
                 <form id="search-form" action="/search" method="GET">
                         <label for="search">Search for a artist</label>
                         <input type="text" name="search" id="search-input-field" placeholder="Enter a artist here">
                         <button type="submit">Find</button>
                       </form>
-        </div>
+        </div> -->
         <div class="search-results">
 
         </div>
@@ -32,7 +40,7 @@
     </main>
 
     <footer>
-        <p>Made with ❤ by </p>
+        <p id="footer-text">Made with ❤ by </p>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

@@ -1,5 +1,60 @@
 'use strict';
 
+
+
+//---------------------------------------------------------------------------------------
+//          MENU LOGIC
+//---------------------------------------------------------------------------------------
+
+
+var Menu =
+{
+  el:
+  {
+    menu: $('.menu'),
+    menuTop: $('.menu-top'),
+    menuClose: $('.menu-close'),
+    menuMiddle: $('.menu-middle'),
+    menuBottom: $('.menu-bottom'),
+    menuText: $('.menu-text')
+  },
+    
+  init: function()
+  {
+    Menu.bindUIactions();
+  },
+    
+  bindUIactions: function() {
+    Menu.el.menu
+      .on(
+        'click',
+        function(event) {
+          Menu.activateMenu(event);
+          event.preventDefault();
+        }
+      );
+  },
+    
+  activateMenu: function() {
+    Menu.el.menuTop.toggleClass('menu-top-expand expand');
+    Menu.el.menuMiddle.toggleClass('menu-middle-expand expand');
+    Menu.el.menuBottom.toggleClass('menu-bottom-expand expand'); 
+    Menu.el.menuText.toggleClass('menu-text-expand');
+    Menu.el.menuClose.toggleClass('menu-close-visible');
+  }
+};
+    
+//Stop menu item click closing the menu
+$('.menu .menu-global').click(function(e) {
+  e.stopPropagation();
+});
+  
+Menu.init();
+
+
+
+
+
 /* Variable to store the back end URL. This allows the client to make requests to *your* deployed back end, no one else's */
 // let __API_URL__;
 
@@ -22,24 +77,24 @@
 
 //   alert('hEllo!');
 
-  // Captures the query entered by the user and stores it in a variable
+// Captures the query entered by the user and stores it in a variable
 //   let searchQuery = $('#input-search').val();
 
-  // Use jQuery to make a request to a server at a specific URL
-  // In our case, the URL is our deployed back end on Heroku
-  // Or, if we are testing locally with nodemon, our port on local host
+// Use jQuery to make a request to a server at a specific URL
+// In our case, the URL is our deployed back end on Heroku
+// Or, if we are testing locally with nodemon, our port on local host
 //   $.ajax({
-  /* Specifies the URL and path, corresponds to a listener in the server. On the back end (aka in the server.js file), this corresponds to the "location" part of app.get('/location'), also called the "path" */
-  // url: `${__API_URL__}/location`,
-  // specifies the method we want to use, this part matches to "app.get" in the server
-  // method: 'GET',
-  /* Sends along the necessary data, which the server can then use. Remember, this is the value of the search box, so this comes from the user. On the back end, we can access this as "request.query.data". The "request.query" comes from the request and the data is appended to the url. For example, "http://localhost:3000/location?data=seattle". It has to be "data" specifically in "request.query.data" because that is the value we set in the object literal. The server has no idea what "searchQuery" is because it is a variable scoped to the client, but whatever the user enters is stored in the searchQuery variable and then included as part of the request. */
-  // data: {data: searchQuery}
+/* Specifies the URL and path, corresponds to a listener in the server. On the back end (aka in the server.js file), this corresponds to the "location" part of app.get('/location'), also called the "path" */
+// url: `${__API_URL__}/location`,
+// specifies the method we want to use, this part matches to "app.get" in the server
+// method: 'GET',
+/* Sends along the necessary data, which the server can then use. Remember, this is the value of the search box, so this comes from the user. On the back end, we can access this as "request.query.data". The "request.query" comes from the request and the data is appended to the url. For example, "http://localhost:3000/location?data=seattle". It has to be "data" specifically in "request.query.data" because that is the value we set in the object literal. The server has no idea what "searchQuery" is because it is a variable scoped to the client, but whatever the user enters is stored in the searchQuery variable and then included as part of the request. */
+// data: {data: searchQuery}
 //   }) // the client doesn't know what the server will be sending back, but whatever it sends, we are going to call it "location", below, as a parameter to represent the server's response. Because we are writing the back end code as well, we know that this is going to be an object literal with four properties: search_query, formatted_address, latutitude, and longitude
-  // .then(location => { // remember, this code will execute when the AJAX request completes
-  // renders the Google map based on the latitude and longitude returned from the server
-  //   displayMap(location);
-  /* Use the getResource helper function, below, to send additional requests. For example, the first one matches over to the following URL: ${__API_URL__}/weather. This uses the same "location" parameter that represents the response from the server.
+// .then(location => { // remember, this code will execute when the AJAX request completes
+// renders the Google map based on the latitude and longitude returned from the server
+//   displayMap(location);
+/* Use the getResource helper function, below, to send additional requests. For example, the first one matches over to the following URL: ${__API_URL__}/weather. This uses the same "location" parameter that represents the response from the server.
 
       This can also be written as:
       $.ajax({
@@ -51,15 +106,15 @@
       This can also be written as:
       $.get(`${__API_URL__}/weather`, {data: location});
       */
-  //   getResource('weather', location);
+//   getResource('weather', location);
 
-  // })
-  // This is what we do if an error occurs. Every .then should be matched with a .catch
-  // .catch(error => {
-  //   compileTemplate([error], 'error-container', 'error-template');
-  //   $('#map').addClass('hide');
-  //   $('section, div').addClass('hide');
-  // });
+// })
+// This is what we do if an error occurs. Every .then should be matched with a .catch
+// .catch(error => {
+//   compileTemplate([error], 'error-container', 'error-template');
+//   $('#map').addClass('hide');
+//   $('section, div').addClass('hide');
+// });
 // }
 
 // // From the Google Maps API, uses the latitude and longitude to render the map
