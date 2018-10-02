@@ -59,20 +59,20 @@ Menu.init();
 // 'SEARCH' listener
 $('.menu-top').on('click', function(event)
 {
-  console.log(event);
+  // console.log(event);
 })
 
 // 'MY EVENTS' clicked
 $('.menu-middle').on('click', function(event)
 {
-  console.log(event);
+  // console.log(event);
 })
 
 // 'ABOUT US' clicked
 $('.menu-bottom').on('click', function(event)
 {
-  console.log(event);
-  
+  // console.log(event);
+
 })
 
 
@@ -83,13 +83,13 @@ $('.menu-bottom').on('click', function(event)
 // 'TICKETS' listener
 $('.button-tickets').on('click', function(event)
 {
-  console.log(event);
+  // console.log(event);
 })
 
 // 'SAVE' listener
 $('.button-saveaseat').on('click', function(event)
 {
-  console.log(event);
+  // console.log(event);
 })
 
 

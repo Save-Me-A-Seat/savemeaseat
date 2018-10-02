@@ -157,28 +157,4 @@
     text-shadow: rgba(0, 0, 0, 0.1) -2.5px 5px 7.5px, rgba(0, 0, 0, 0.1) 2.5px 5px 7.5px;
   }
 
-  /*-----------------------------------*/
-  /* FOOTER - "Made with love by ..."  */
-  /* static, stays on a bottom */
   
-  footer
-  {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    text-align: center;
-  }
-  
-  #footer-text
-  {
-    color: darkorange;
-    opacity: 0.75;
-  }
-  
-  #footer-text-love
-  {
-      color: red;
-      opacity: 0.75;
-  }
