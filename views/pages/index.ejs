@@ -6,29 +6,29 @@
     <title>Save Me A Seat</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="./css/base.css" />
-    
 </head>
 <body>
-
     <header>
        <h2>Main</h2> 
        <nav class="nav-menu"></nav>
     </header>
 
     <main class="wrapper">
-        
-
         <div class="search-input">
-                <form id="search-form" action="/search" method="GET">
-                        <label for="search">Search for a artist</label>
-                        <input type="text" name="search" id="search-input-field" placeholder="Enter a artist here">
-                        <button type="submit">Find</button>
-                      </form>
+            <form id="search-form" action="/search" method="GET">
+                <label for="search">Search for a artist</label>
+                <input type="text" name="search" id="search-input-field" placeholder="Enter a artist here">
+                <button type="submit">Find</button>
+            </form>
         </div>
-        <div class="search-results">
 
+        <div class="search-results">
+          <% eventList.forEach((event) => { %>
+            <article>
+              <%- include('../partials/event', {event: event}) %>
+            </article>
+          <% }) %>
         </div>
-        
     </main>
 
     <footer>
@@ -37,9 +37,5 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="./js/app.js"></script>
-    
 </body>
-
-
-
 </html>
