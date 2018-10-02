@@ -32,12 +32,14 @@ app.set('view engine', 'ejs');
 // Proof of life
 app.listen(PORT, () => console.log(`Listening on port: ${process.env.PORT}`));
 
+app.get('/index', goToMainPage);
+app.get('/saved-seats', goToSavedSeatsPage);
+app.get('/about-us', goToAboutPage);
+
 app.get('/', searchOrSavedSeats);
 app.get('/search', searchForArtist);
 app.post('/add-saved-seats', addToSavedSeats);
 app.get('*', (request, response) => response.status(404).send('This route does not exist'));
-
-
 
 // Event constructor function
 function Event(event) {
@@ -66,7 +68,7 @@ function searchOrSavedSeats(request, response) {
       if (seatCheck.rowCount > 0) {
         response.redirect('pages/saved-seats')
       } else {
-        response.render('pages/index')
+        response.render('pages/index', { eventList: [] })
       }
     })
 }
@@ -93,4 +95,26 @@ function addToSavedSeats(request, response) {
   client.query(SQL, values)
     .then(() => response.redirect('/saved-seats/'))
     .catch(error => handleError(error, response));
+}
+
+//----------------------------------------------------------------
+//    pages menu functions
+//----------------------------------------------------------------
+
+// main page
+function goToMainPage(request, response)
+{
+  response.render('pages/index', { eventList: [] });
+}
+
+// saved seats page
+function goToSavedSeatsPage(request, response)
+{
+  response.render('pages/saved-seats');
+}
+
+// about page
+function goToAboutPage(request, response)
+{
+  response.render('pages/about-us');
 }
