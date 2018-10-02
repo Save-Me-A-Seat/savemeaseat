@@ -27,9 +27,9 @@
         </div>
         <div class="search-results">
           <% eventList.forEach((event) => { %>
-            <section>
+            <article>
               <%- include('../partials/event', {event: event}) %>
-            </section>
+            </article>
           <% }) %>
         </div>
         

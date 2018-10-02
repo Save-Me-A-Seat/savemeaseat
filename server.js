@@ -46,10 +46,6 @@ function searchForArtist(request, response) {
 
   superagent.get(url)
     .then(upcomingEvents => upcomingEvents.body.map(event => new Event(event)))
-    .then(eventList => {
-      console.log(eventList)
-      return eventList;
-    })
     .then(eventList => response.render('pages/index', { eventList: eventList }))
     .catch(error => handleError(error, response));
 }
