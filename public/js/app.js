@@ -6,7 +6,6 @@
 //          MENU LOGIC
 //---------------------------------------------------------------------------------------
 
-
 var Menu =
 {
   el:
@@ -24,7 +23,8 @@ var Menu =
     Menu.bindUIactions();
   },
     
-  bindUIactions: function() {
+  bindUIactions: function()
+  {
     Menu.el.menu
       .on(
         'click',
@@ -35,7 +35,8 @@ var Menu =
       );
   },
     
-  activateMenu: function() {
+  activateMenu: function()
+  {
     Menu.el.menuTop.toggleClass('menu-top-expand expand');
     Menu.el.menuMiddle.toggleClass('menu-middle-expand expand');
     Menu.el.menuBottom.toggleClass('menu-bottom-expand expand'); 
@@ -51,9 +52,32 @@ $('.menu .menu-global').click(function(e) {
   
 Menu.init();
 
+//---------------------------------------------------------------------------------------
+//          MENU LISTENERS
+//---------------------------------------------------------------------------------------
+
+// 'SEARCH' listener
+$('.menu-top').on('click', function(event)
+{
+  console.log(event);
+})
+
+// 'MY EVENTS' clicked
+$('.menu-middle').on('click', function(event)
+{
+  console.log(event);
+})
+
+// 'ABOUT US' clicked
+$('.menu-bottom').on('click', function(event)
+{
+  console.log(event);
+})
 
 
-
+//---------------------------------------------------------------------------------------
+//          
+//---------------------------------------------------------------------------------------
 
 /* Variable to store the back end URL. This allows the client to make requests to *your* deployed back end, no one else's */
 // let __API_URL__;

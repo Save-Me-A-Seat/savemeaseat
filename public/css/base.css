@@ -1,6 +1,6 @@
 *
 {
-    outline: solid 1px orange;
+    /* outline: solid 3px orange; */
 }
 
 body 
@@ -33,7 +33,7 @@ body
 
 .search-input
 {
-
+    text-align: center
 }
 
 #search-input-field
