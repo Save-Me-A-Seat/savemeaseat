@@ -1,4 +1,4 @@
-<p><%= event.day %></p>
+<!-- <p><%= event.day %></p>
 <p><%= event.month %></p>
 <p><%= event.year %></p>
 <p><%= event.hour %></p>
@@ -10,3 +10,32 @@
 <p><%= event.venue %></p>
 <p><%= event.lineup %></p>
 <a href="<%= event.urlToBuyTickets %>">Buy Ticket(s)</a>
+ -->
+
+
+
+
+<!-- ----------------------------------------------------------- -->
+
+<!-- if doesnt work remove p tag  -->
+
+<div class="search-event">
+        <div class="box data day">
+            <p><%= event.day %></p>
+        </div>
+        <div class="box data month">
+            <p><%= event.month %></p>
+        </div>
+        <div class="box city">
+            <p><%= event.city %></p>
+        </div>
+        <div class="box venue">
+            <p><%= event.venue %></p>
+        </div>
+        <div class="box button tickets">
+            <a href="<%= event.urlToBuyTickets %>"><button class="button-tickets">Tickets</button></a>
+        </div>
+        <div class="box button saveaseat">
+            <button class="button-saveaseat">Save</button>
+        </div>
+    </div>

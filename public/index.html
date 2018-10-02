@@ -5,19 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Save Me A Seat</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/reset.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="./css/base.css" />
-    
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/layout.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/module.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/state.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./css/menu.css" />
 </head>
-<body>
+
+<!-- head.ejs - stays across all pages  -->
+<body class="wrapper">
 
     <header>
-       <h2>Main</h2> 
-       <nav class="nav-menu"></nav>
+       <nav class="nav-menu">
+            <ul class="menu">
+                <div class="menu-close fa fa-close">&#10005;</div>
+                <li class="menu-global menu-top"><span class="menu-text">Search</span></li>
+                <li class="menu-global menu-middle"><span class="menu-text">My Events</span></li>
+                <li class="menu-global menu-bottom"><span class="menu-text">About Us</span></li>
+            </ul>
+       </nav>
     </header>
 
-    <main class="wrapper">
+<!-- Header.ejs stops here - will stay same across all pages  -->
+    <main>
         
-
         <div class="search-input">
                 <form id="search-form" action="/search" method="GET">
                         <label for="search">Search for a artist</label>
@@ -25,21 +37,42 @@
                         <button type="submit">Find</button>
                       </form>
         </div>
+
         <div class="search-results">
 
+<!-- Event.ejs - each particular event on a main page  -->
+            <div class="search-event">
+                <div class="box data day">
+                    12
+                </div>
+                <div class="box data month">
+                    November
+                </div>
+                <div class="box city">
+                    Seattle
+                </div>
+                <div class="box venue">
+                    Century Link Stadium
+                </div>
+                <div class="box button tickets">
+                    <button class="button-tickets">Tickets</button>
+                </div>
+                <div class="box button saveaseat">
+                    <button class="button-saveaseat">Save</button>
+                </div>
+            </div>
+
+            
         </div>
+
         
     </main>
 
+<!-- Footer.ejs - will stay same across all pages  -->
     <footer>
-        <p>Made with ❤ by </p>
+        <p id="footer-text">Made with <b id="footer-text-love">❤</b> by </p>
     </footer>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="./js/app.js"></script>
-    
 </body>
-
-
-
 </html>
