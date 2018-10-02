@@ -34,22 +34,10 @@ app.listen(PORT, () => console.log(`Listening on port: ${process.env.PORT}`));
 
 app.get('/', renderSearchForm);
 app.get('/search', searchForArtist);
-// app.post('/add-event', addEventToDatabase);
+app.post('/add-saved-seats', addToSavedSeats);
+app.get('*', (request, response) => response.status(404).send('This route does not exist'));
 
-// Renders index.ejs
-function renderSearchForm(request, response) {
-  response.render('pages/index');
-}
 
-// Searches for the artist
-function searchForArtist(request, response) {
-  const url = `https://rest.bandsintown.com/artists/${request.query.search}/events?app_id=${process.env.BANDS_IN_TOWN_KEY}&date=upcoming`;
-
-  superagent.get(url)
-    .then(upcomingEvents => upcomingEvents.body.map(event => new Event(event)))
-    .then(eventList => response.render('pages/index', { eventList: eventList }))
-    .catch(error => handleError(error, response));
-}
 
 // Event constructor function
 function Event(event) {
@@ -68,7 +56,35 @@ function Event(event) {
   this.ticketAvailability = event.offers.length > 0 && event.offers[0].status === 'available' ? true : false;
 }
 
-// Error handling functions
-app.get('*', (request, response) => response.status(404).send('This route does not exist'));
 
+
+
+// HELPER FUNCTIONS!!!!
+
+// Renders index.ejs
+function renderSearchForm(request, response) {
+  response.render('pages/index');
+}
+
+// Searches for the artist
+function searchForArtist(request, response) {
+  const url = `https://rest.bandsintown.com/artists/${request.query.search}/events?app_id=${process.env.BANDS_IN_TOWN_KEY}&date=upcoming`;
+
+  superagent.get(url)
+    .then(upcomingEvents => upcomingEvents.body.map(event => new Event(event)))
+    .then(eventList => response.render('pages/index', { eventList: eventList }))
+    .catch(error => handleError(error, response));
+}
+
+// Error handling
 const handleError = (error, response) => console.log(error);
+
+function addToSavedSeats(request, response) {
+  let {month, day, year, hour, minute, am_pm, city, state, country, venue, lineup, url, ticket_available} = request.body;
+
+  const SQL = 'INSERT INTO events (month, day, year, hour, minute, am_pm, city, state, country, venue, lineup, url, ticket_available) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13);';
+  const values = [month, day, year, hour, minute, am_pm, city, state, country, venue, lineup, url, ticket_available];
+
+  client.query(SQL, values)
+    .then(() => response.redirect('/saved-seats/')).catch(error => handleError(error, response));
+}
