@@ -72,6 +72,7 @@ $('.menu-middle').on('click', function(event)
 $('.menu-bottom').on('click', function(event)
 {
   console.log(event);
+  
 })
 
 
