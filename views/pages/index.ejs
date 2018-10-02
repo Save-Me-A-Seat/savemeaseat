@@ -26,7 +26,11 @@
                       </form>
         </div>
         <div class="search-results">
-
+          <% eventList.forEach((event) => { %>
+            <section>
+              <%- include('../partials/event', {event: event}) %>
+            </section>
+          <% }) %>
         </div>
         
     </main>
