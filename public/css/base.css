@@ -77,10 +77,12 @@ button
     display: grid;
     grid-template-columns: 30% 30% 30%;
     grid-template-rows: 30% 30% 30%;
-    grid-gap: 5px;
+    grid-gap: 10px;
 
     padding: 5px;
-    overflow-wrap: break-word;
+
+    
+    overflow-wrap: normal;
     border-radius: 1em;
     box-shadow: -5px 5px 17px -3px rgba(0,0,0,0.75);
 
@@ -174,6 +176,7 @@ p
     right: 0;
     width: 100%;
     text-align: center;
+    margin-top: 5em;
   }
   
   #footer-text
