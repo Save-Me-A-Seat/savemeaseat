@@ -31,6 +31,13 @@ body
 /*   grid-row: 1; */
 }
 
+
+.footer 
+{
+    text-align: center;
+}
+
+
 .search-input
 {
     text-align: center
@@ -43,18 +50,14 @@ body
     height: 2em;
 }
 
+button
+{
+    margin: 10px;
+}
+
+
 .search-results
 { 
-/*   grid-row: 2; */
+    display: grid;
 }
-
-.footer 
-{
-    text-align: center;
-}
-
-
-
-
-
 
