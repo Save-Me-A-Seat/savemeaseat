@@ -1,6 +1,17 @@
 *
 {
-    /* outline: solid 3px orange; */
+    outline: solid 1px orange;
+}
+
+body 
+{
+  padding: 10px 10px 0px 10px;
+  font-family: 'Lato', sans-serif;
+   
+  background-color: #FEE140;
+  background-image: linear-gradient(90deg, #FEE140 0%, #FA709A 100%);
+     
+  overflow-x: hidden;
 }
 
 .wrapper 
@@ -39,10 +50,7 @@
 
 .footer 
 {
-
     text-align: center;
-    
-
 }
 
 
