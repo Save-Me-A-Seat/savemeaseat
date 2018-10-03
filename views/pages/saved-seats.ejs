@@ -11,11 +11,15 @@
 
 
         <div class="saved-seats">
-            <% eventList.forEach((event) => { %>
-                <article>
-                  <%- include('../partials/event', {event: event}) %>
-                </article>
-              <% }) %>
+            <% if (typeof(eventList) !== 'string') { %>
+                <% eventList.forEach((event) => { %>
+                    <article>
+                    <%- include('../partials/event', {event: event}) %>
+                    </article>
+                <% }) %>
+            <% } else { %>
+                <p><%= eventList %></p>
+            <% } %>
         </div>
 
         
