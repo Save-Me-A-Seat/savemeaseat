@@ -15,7 +15,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Allows us to use PUT and DELETE
-app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride(function (request, response) {
   if (request.body && typeof request.body === 'object' && '_method' in request.body) {
     let method = request.body._method;
