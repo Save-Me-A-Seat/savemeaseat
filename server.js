@@ -41,7 +41,7 @@ app.get('/search', searchForArtist);
 app.post('/add-saved-seats', addToSavedSeats);
 app.get('*', (request, response) => response.status(404).send('This route does not exist'));
 
-// Event constructor function
+// Constructor function to pass API data through
 function Event(event) {
   this.month = event.datetime ? numberToMonth(event.datetime.slice(5, 7)) : 'Not available';
   this.day = event.datetime ? event.datetime.slice(8, 10) : 'Not available';
@@ -58,6 +58,7 @@ function Event(event) {
   this.ticketAvailability = event.offers.length > 0 && event.offers[0].status === 'available' ? true : false;
 }
 
+// Constructor function to pass database data through
 function FromDatabase(event) {
   this.month = event.month;
   this.day = event.day;
@@ -82,17 +83,24 @@ function searchOrSavedSeats(request, response) {
   return client.query(SQL)
     .then(seatCheck => {
       if (seatCheck.rowCount > 0) {
-        console.log('+++++++++++++++++++++++++++++++++++++++++++');
-        console.log('seatCheck.rows: ', seatCheck.rows);
-        console.log('+++++++++++++++++++++++++++++++++++++++++++');
         const eventList = seatCheck.rows.map(event => new FromDatabase(event))
-
-        console.log('*******************************************');
-        console.log(eventList);
-        console.log('*******************************************');
         response.render('pages/saved-seats', {eventList: eventList});
       } else {
         response.render('pages/index', { eventList: [] })
+      }
+    })
+}
+
+function showSavedSeats(request, response) {
+  const SQL = 'SELECT * FROM events;';
+  return client.query(SQL)
+    .then(seatCheck => {
+      if (seatCheck.rowCount > 0) {
+        const eventList = seatCheck.rows.map(event => new FromDatabase(event))
+        response.render('pages/saved-seats', {eventList: eventList});
+      } else {
+        const eventList = 'You have no saved seats';
+        response.render('pages/saved-seats', { eventList: eventList });
       }
     })
 }
@@ -136,7 +144,7 @@ function goToMainPage(request, response)
 // saved seats page
 function goToSavedSeatsPage(request, response)
 {
-  response.render('pages/saved-seats');
+  showSavedSeats(request, response);
 }
 
 // about page
