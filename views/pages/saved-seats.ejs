@@ -11,11 +11,13 @@
 
 
         <div class="saved-seats">
+
             <% eventList.forEach((event) => { %>
                 <article>
-                  <%- include('../partials/event', {event: event}) %>
+                  <%- include('../partials/event-saved', {event: event}) %>
                 </article>
               <% }) %>
+
         </div>
 
         
