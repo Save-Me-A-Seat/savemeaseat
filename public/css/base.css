@@ -142,13 +142,16 @@ button
   grid-row: 3;
 
   justify-self: center;
+  display: table;
+  
 }
 
 .button-tickets
 {
     margin: 0 0 10px 0;
-    width: 80px;
+    /* width: 80px; */
     height: 30px;
+
 }
 
 .button-saveaseat
@@ -189,4 +192,14 @@ p
   {
       color: red;
       opacity: 0.75;
+  }
+
+  .saved-seats
+  {
+    display: grid;
+  }
+
+  #button-find
+  {
+    width: 80px;
   }
