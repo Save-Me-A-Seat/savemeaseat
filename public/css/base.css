@@ -188,6 +188,8 @@ p
     overflow-wrap: normal;
     border-radius: 1em;
     box-shadow: -5px 5px 17px -3px rgba(0,0,0,0.75);
+
+    margin: 1em 1em;
 }
 
 .saved.data.day
@@ -216,44 +218,56 @@ p
 {
     grid-column: 1;
     grid-row: 3;
+
+    text-align: center;
 }
  
 .saved.lineup
 {
     grid-column: 2/4;
-    grid-row: 1;
+    grid-row: 2;
 }
 
 .saved.city
 {
     grid-column: 2;
-    grid-row: 3;
+    grid-row: 4;
 }
 
-.saved.state
-{
-    grid-column: 3;
-    grid-row: 3;
-}
+
 
 .saved.country
 {
-    grid-column: 2/4;
+    grid-column: 3;
     grid-row: 4;
+
+
 }
 
 .saved.data.time
 {
     grid-column: 1;
     grid-row: 4;
+
+    text-align: center;
 }
 
 .saved.venue
 {
     grid-column: 2/4;
-    grid-row: 2;
+    grid-row: 3;
 
-    font-size: 0.8em;
+    font-size: 0.9em;
+}
+
+.saved.name
+{
+    grid-column: 2/4;
+    grid-row: 1;
+
+    font-weight: bold;
+    font-size: 1.2em;
+    line-height: 1.5;
 }
 
 .saved-button-tickets
