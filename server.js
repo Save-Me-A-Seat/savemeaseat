@@ -51,7 +51,13 @@ function Event(event) {
   this.minute = event.datetime ? event.datetime.slice(14,16) : 'Not available';
   this.amOrPm = !event.datetime ? 'Not available' : parseInt(event.datetime.slice(11, 13)) < 12 ? 'AM' : 'PM';
   this.city = event.venue.city ? event.venue.city : 'Not available';
+  console.log('*********************************************');
+  console.log('this.city: ', this.city);
+  console.log('*********************************************');
   this.state = event.venue.region ? event.venue.region : 'Not available';
+  console.log('*********************************************');
+  console.log('this.state: ', this.state);
+  console.log('*********************************************');
   this.country = event.venue.country ? event.venue.country : 'Not available' ;
   this.venue = event.venue.name ? event.venue.name : 'Not available' ;
   this.lineup = event.lineup ? event.lineup.reduce((accumulator, currentValue) => accumulator + `, ${currentValue}`) : 'Not available';
@@ -69,7 +75,7 @@ function FromDatabase(event) {
   this.minute = event.minute;
   this.am_pm = event.am_pm;
   this.city = event.city;
-  this.state = event.state;
+  this.state = this.state ? this.state : 'not available';
   this.country = event.country;
   this.venue = event.venue;
   this.lineup = event.lineup;
@@ -122,12 +128,13 @@ const handleError = (error, response) => console.log(error);
 
 function addToSavedSeats(request, response) {
   console.log('*********');
-  console.log(request.body);
-  let {month, day, year, hour, minute, am_pm, city, state, country, venue, lineup, url, ticket_available} = request.body;
 
+  let {month, day, year, hour, minute, am_pm, city, state, country, venue, lineup, url, ticket_available} = request.body;
+  // console.log('body: ', request.body);
   const SQL = 'INSERT INTO events (month, day, year, hour, minute, am_pm, city, state, country, venue, lineup, url, ticket_available) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13);';
   const values = [month, day, year, hour, minute, am_pm, city, state, country, venue, lineup, url, ticket_available];
-
+  console.log('month', month)
+  console.log('state>>>>>>>>>>>>>>>>>>>>>>',state)
   client.query(SQL, values)
     .then(() => response.redirect('/saved-seats'))
     .catch(error => handleError(error, response));
