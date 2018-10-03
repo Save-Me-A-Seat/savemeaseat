@@ -39,6 +39,7 @@ app.get('/about-us', goToAboutPage);
 app.get('/', searchOrSavedSeats);
 app.get('/search', searchForArtist);
 app.post('/add-saved-seats', addToSavedSeats);
+app.delete('/delete/:id', deleteFromDatabase);
 app.get('*', (request, response) => response.status(404).send('This route does not exist'));
 
 // Constructor function to pass API data through
@@ -60,6 +61,7 @@ function Event(event) {
 
 // Constructor function to pass database data through
 function FromDatabase(event) {
+  this.id = event.id;
   this.month = event.month;
   this.day = event.day;
   this.year = event.year;
@@ -128,6 +130,17 @@ function addToSavedSeats(request, response) {
 
   client.query(SQL, values)
     .then(() => response.redirect('/saved-seats'))
+    .catch(error => handleError(error, response));
+}
+
+// Deletes an event from the database
+function deleteFromDatabase(request, response) {
+  console.log('**********************************');
+  console.log('deleting from the datbase:', request.params.id);
+  const SQL = 'DELETE FROM events WHERE id=$1;';
+  const value = [request.params.id];
+  client.query(SQL, value)
+    .then(response.redirect('/saved-seats'))
     .catch(error => handleError(error, response));
 }
 
