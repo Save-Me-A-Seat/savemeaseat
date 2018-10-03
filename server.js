@@ -66,7 +66,7 @@ function searchOrSavedSeats(request, response) {
   return client.query(SQL)
     .then(seatCheck => {
       if (seatCheck.rowCount > 0) {
-        response.redirect('pages/saved-seats')
+        response.redirect('/saved-seats')
       } else {
         response.render('pages/index', { eventList: [] })
       }
@@ -95,7 +95,7 @@ function addToSavedSeats(request, response) {
   const values = [month, day, year, hour, minute, am_pm, city, state, country, venue, lineup, url, ticket_available];
 
   client.query(SQL, values)
-    .then(() => response.redirect('/saved-seats/'))
+    .then(() => response.redirect('/saved-seats'))
     .catch(error => handleError(error, response));
 }
 
