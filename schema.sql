@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS events (
 id SERIAL PRIMARY KEY,
-artistName VARCHAR(255),
+artistname VARCHAR(255),
 month VARCHAR(255),
 day VARCHAR(255),
 year VARCHAR(255),
