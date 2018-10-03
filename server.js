@@ -87,6 +87,8 @@ function searchForArtist(request, response) {
 const handleError = (error, response) => console.log(error);
 
 function addToSavedSeats(request, response) {
+  console.log('*********');
+  console.log(request.body);
   let {month, day, year, hour, minute, am_pm, city, state, country, venue, lineup, url, ticket_available} = request.body;
 
   const SQL = 'INSERT INTO events (month, day, year, hour, minute, am_pm, city, state, country, venue, lineup, url, ticket_available) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13);';

@@ -18,8 +18,8 @@
     </div>
     
     <form action="/add-saved-seats" method= "post">
-        <input type="hidden" name="month" value="event.day">
-        <input type="hidden" name="day" value="<%= event.month %>">
+        <input type="hidden" name="month" value="<%= event.month %>">
+        <input type="hidden" name="day" value="<%= event.day %>">
         <input type="hidden" name="year" value="<%= event.year %>">
         <input type="hidden" name="hour" value="<%= event.hour %>">
         <input type="hidden" name="minute" value="<%= event.minute %>">
