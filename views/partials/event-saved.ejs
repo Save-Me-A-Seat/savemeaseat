@@ -51,6 +51,9 @@
                 <a href="<%= event.urlToBuyTickets %>"><button id="saved-button-tickets">Tickets</button></a>
             </div>
             <div class="saved-button-delete">
-                <a href=""><button id="saved-button-delete">Delete</button></a>
+                <form action="/delete/<%= event.id %>" method="POST">
+                        <input type="hidden" name="_method" value="DELETE">
+                    <button id="saved-button-delete">Delete</button>
+                </form>
             </div>
         </div>

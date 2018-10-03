@@ -39,6 +39,7 @@ app.get('/about-us', goToAboutPage);
 app.get('/', searchOrSavedSeats);
 app.get('/search', searchForArtist);
 app.post('/add-saved-seats', addToSavedSeats);
+app.delete('/delete/:id', deleteFromDatabase);
 app.get('*', (request, response) => response.status(404).send('This route does not exist'));
 
 // Constructor function to pass API data through
@@ -51,7 +52,13 @@ function Event(event) {
   this.minute = event.datetime ? event.datetime.slice(14,16) : 'Not available';
   this.amOrPm = !event.datetime ? 'Not available' : parseInt(event.datetime.slice(11, 13)) < 12 ? 'AM' : 'PM';
   this.city = event.venue.city ? event.venue.city : 'Not available';
+  console.log('*********************************************');
+  console.log('this.city: ', this.city);
+  console.log('*********************************************');
   this.state = event.venue.region ? event.venue.region : 'Not available';
+  console.log('*********************************************');
+  console.log('this.state: ', this.state);
+  console.log('*********************************************');
   this.country = event.venue.country ? event.venue.country : 'Not available' ;
   this.venue = event.venue.name ? event.venue.name : 'Not available' ;
   this.lineup = event.lineup ? event.lineup.reduce((accumulator, currentValue) => accumulator + `, ${currentValue}`) : 'Not available';
@@ -61,7 +68,10 @@ function Event(event) {
 
 // Constructor function to pass database data through
 function FromDatabase(event) {
+
   this.artistName = event.artistname;
+  this.id = event.id;
+
   this.month = event.month;
   this.day = event.day;
   this.year = event.year;
@@ -69,7 +79,7 @@ function FromDatabase(event) {
   this.minute = event.minute;
   this.am_pm = event.am_pm;
   this.city = event.city;
-  this.state = event.state;
+  this.state = this.state ? this.state : 'not available';
   this.country = event.country;
   this.venue = event.venue;
   this.lineup = event.lineup;
@@ -130,6 +140,17 @@ function addToSavedSeats(request, response) {
 
   client.query(SQL, values)
     .then(() => response.redirect('/saved-seats'))
+    .catch(error => handleError(error, response));
+}
+
+// Deletes an event from the database
+function deleteFromDatabase(request, response) {
+  console.log('**********************************');
+  console.log('deleting from the datbase:', request.params.id);
+  const SQL = 'DELETE FROM events WHERE id=$1;';
+  const value = [request.params.id];
+  client.query(SQL, value)
+    .then(response.redirect('/saved-seats'))
     .catch(error => handleError(error, response));
 }
 
