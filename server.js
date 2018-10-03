@@ -43,6 +43,7 @@ app.get('*', (request, response) => response.status(404).send('This route does n
 
 // Constructor function to pass API data through
 function Event(event) {
+  this.artistName = event.lineup ? event.lineup[0] : 'Not available';
   this.month = event.datetime ? numberToMonth(event.datetime.slice(5, 7)) : 'Not available';
   this.day = event.datetime ? event.datetime.slice(8, 10) : 'Not available';
   this.year = event.datetime ? event.datetime.slice(0, 4) : 'Not available';
@@ -60,6 +61,7 @@ function Event(event) {
 
 // Constructor function to pass database data through
 function FromDatabase(event) {
+  this.artistName = event.artistname;
   this.month = event.month;
   this.day = event.day;
   this.year = event.year;
@@ -121,10 +123,10 @@ const handleError = (error, response) => console.log(error);
 function addToSavedSeats(request, response) {
   console.log('*********');
   console.log(request.body);
-  let {month, day, year, hour, minute, am_pm, city, state, country, venue, lineup, url, ticket_available} = request.body;
+  let {artistName, month, day, year, hour, minute, am_pm, city, state, country, venue, lineup, url, ticket_available} = request.body;
 
-  const SQL = 'INSERT INTO events (month, day, year, hour, minute, am_pm, city, state, country, venue, lineup, url, ticket_available) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13);';
-  const values = [month, day, year, hour, minute, am_pm, city, state, country, venue, lineup, url, ticket_available];
+  const SQL = 'INSERT INTO events (artistName, month, day, year, hour, minute, am_pm, city, state, country, venue, lineup, url, ticket_available) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14);';
+  const values = [artistName, month, day, year, hour, minute, am_pm, city, state, country, venue, lineup, url, ticket_available];
 
   client.query(SQL, values)
     .then(() => response.redirect('/saved-seats'))

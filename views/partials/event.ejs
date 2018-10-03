@@ -17,6 +17,7 @@
 
 
     <form action="/add-saved-seats" method= "post">
+        <input type="hidden" name="artistName" value="<%= event.artistName %>">
         <input type="hidden" name="month" value="<%= event.month %>">
         <input type="hidden" name="day" value="<%= event.day %>">
         <input type="hidden" name="year" value="<%= event.year %>">
