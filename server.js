@@ -32,16 +32,18 @@ app.set('view engine', 'ejs');
 // Proof of life
 app.listen(PORT, () => console.log(`Listening on port: ${process.env.PORT}`));
 
+app.get('/index', goToMainPage);
+app.get('/saved-seats', goToSavedSeatsPage);
+app.get('/about-us', goToAboutPage);
+
 app.get('/', searchOrSavedSeats);
 app.get('/search', searchForArtist);
 app.post('/add-saved-seats', addToSavedSeats);
 app.get('*', (request, response) => response.status(404).send('This route does not exist'));
 
-
-
 // Event constructor function
 function Event(event) {
-  this.month = event.datetime ? event.datetime.slice(5, 7) : 'Not available';
+  this.month = event.datetime ? numberToMonth(event.datetime.slice(5, 7)) : 'Not available';
   this.day = event.datetime ? event.datetime.slice(8, 10) : 'Not available';
   this.year = event.datetime ? event.datetime.slice(0, 4) : 'Not available';
   this.hour = event.datetime ? (parseInt(event.datetime.slice(11, 13)) - 12).toString() : 'Not available';
@@ -66,7 +68,7 @@ function searchOrSavedSeats(request, response) {
       if (seatCheck.rowCount > 0) {
         response.redirect('pages/saved-seats')
       } else {
-        response.render('pages/index')
+        response.render('pages/index', { eventList: [] })
       }
     })
 }
@@ -93,4 +95,62 @@ function addToSavedSeats(request, response) {
   client.query(SQL, values)
     .then(() => response.redirect('/saved-seats/'))
     .catch(error => handleError(error, response));
+}
+
+//----------------------------------------------------------------
+//    pages menu functions
+//----------------------------------------------------------------
+
+// main page
+function goToMainPage(request, response)
+{
+  response.render('pages/index', { eventList: [] });
+}
+
+// saved seats page
+function goToSavedSeatsPage(request, response)
+{
+  response.render('pages/saved-seats');
+}
+
+// about page
+function goToAboutPage(request, response)
+{
+  response.render('pages/about-us');
+}
+
+//----------------------------------------------------------------
+//    function to convert number to month
+//----------------------------------------------------------------
+function numberToMonth(monthNumber)
+{
+  switch (monthNumber)
+  {
+  case '1':
+    return 'January';
+  case '2':
+    return 'February';
+  case '3':
+    return 'March';
+  case '4':
+    return 'April';
+  case '5':
+    return 'May';
+  case '6':
+    return 'June';
+  case '7':
+    return 'July';
+  case '8':
+    return 'August';
+  case '9':
+    return 'September';
+  case '10':
+    return 'October';
+  case '11':
+    return 'November';
+  case '12':
+    return 'December';
+  default:
+    return '';
+  }
 }

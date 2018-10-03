@@ -1,0 +1,160 @@
+
+  span 
+  {
+    /* display: inline-block; */
+    /* vertical-align: middle; */
+    /* color: white; */
+    /* border: solid 1px black; */
+  }
+  
+  ul 
+  {
+    display: block;
+    list-style-type: none;
+    text-align: right;
+  }
+  
+  .menu 
+  {
+    padding-left: 1.25em;
+    cursor: pointer;
+    position: relative;
+    width: 30px;
+    height: 50px;
+    text-align: right;
+  }
+  
+  .menu-close
+  {
+    font-size: 0em;
+    opacity: 0;
+    text-align: center;
+    font-weight: bold;
+  
+    -webkit-transition: 0.2s;
+            transition: 0.2s;
+  }
+  
+  .menu-close-visible
+  {
+    font-size: 2em;
+    opacity: 1;
+  
+    -webkit-transition: 0.2s 0.4s;
+            transition: 0.2s 0.4s;
+  }
+  
+  .menu-global
+  {
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    height: 10px; 
+    width: 100%;
+    background-color: #FFA100;
+
+    box-shadow: -2px 2px 5px -2px rgba(0,0,0,0.75);
+    transition: 0.2s;
+  }
+  
+  .menu-global:hover 
+  {
+    transition: all 0.2s;
+  }
+  
+  .menu-top 
+  {
+    top: 0;
+    background: #FFD58E
+  }
+
+  .menu-middle 
+  {
+    top: 18px;
+    background: #FFB83F;
+  }
+
+  .menu-bottom 
+  {
+    top: 36px;
+    background: #FFA100;
+  }
+  
+  .menu-text
+  {
+    opacity: 0;
+    font-size: 0em;
+    justify-self: center; 
+
+    -webkit-transition: 0.1s;
+            transition: 0.1s;
+  }
+  
+  ul.menu
+  {
+      float: right;
+  }
+
+  .expand 
+  {
+    box-shadow: rgba(0, 0, 0, 0.1) -2.5px 5px 7.5px, rgba(0, 0, 0, 0.1) 2.5px 5px 7.5px;
+    width: 320px;
+    height: 50px;
+    z-index: 1;
+    display: flex;
+    left: -240px;
+
+    justify-content: center;
+    
+  }
+  
+  .menu-top-expand 
+  {
+    top: 50px;
+    background: #FFD58E;
+    border-radius: 20px 0 0 0;
+  
+    -webkit-transition: all 0.5s 0.2s, right 0.1s;
+            transition: all 0.5s 0.2s, right 0.1s;
+  }
+  
+  .menu-middle-expand 
+  {
+    top: 100px;
+    background: #FFB83F;
+  
+    -webkit-transition: all 0.5s 0.1s, right 0.1s;
+            transition: all 0.5s 0.1s, right 0.1s;
+  }
+  
+  .menu-bottom-expand 
+  {
+    top: 150px;
+    height: 100px;
+    background: #FFA100;
+    border-radius: 0 0 0 50px;
+  
+    -webkit-transition: all 0.5s, right 0.1s;
+            transition: all 0.5s, right 0.1s;
+  }
+  
+  .menu-text-expand
+  {
+    text-align: center;
+    color: #000000;
+    opacity: 0.8;
+    padding: 10px;
+    font-size: 1em;
+
+    -webkit-transition: all 0.2s 0.7s, font-size 0.1s;
+            transition: all 0.2s 0.7s, font-size 0.1s;
+  }
+  
+  .menu-close.fa.fa-close
+  {
+    color: #FFD58E;
+    font-stretch: extra-condensed;
+    text-shadow: rgba(0, 0, 0, 0.1) -2.5px 5px 7.5px, rgba(0, 0, 0, 0.1) 2.5px 5px 7.5px;
+  }
+
+  
