@@ -19,23 +19,38 @@
 
 <!-- if doesnt work remove p tag  -->
 
-<div class="search-event">
-        <div class="box data day">
-            <p><%= event.day %></p>
+    <div class="saved-event">
+            <div class="saved data day">
+                <p><%= event.day %></p>
+            </div>
+            <div class="saved data month">
+                <p><%= event.month %></p>
+            </div>
+            <div class="saved data year">
+                <p><%= event.year %></p>
+            </div>
+            <div class="saved data time">
+                <p><%= event.hour + ':' + event.minute + event.amOrPm %></p>
+            </div>
+            <div class="saved lineup">
+                <p><%= event.lineup %></p>
+            </div>
+            <div class="saved city">
+                <p><%= event.city %></p>
+            </div>
+            <div class="saved state">
+                <p><%= event.state %></p>
+            </div>
+            <div class="saved country">
+                <p><%= event.country %></p>
+            </div>
+            <div class="saved venue">
+                <p><%= event.venue %></p>
+            </div>
+            <div class="saved-button-tickets">
+                <a href="<%= event.urlToBuyTickets %>"><button id="saved-button-tickets">Tickets</button></a>
+            </div>
+            <div class="saved-button-delete">
+                <a href=""><button id="saved-button-delete">Delete</button></a>
+            </div>
         </div>
-        <div class="box data month">
-            <p><%= event.month %></p>
-        </div>
-        <div class="box city">
-            <p><%= event.city %></p>
-        </div>
-        <div class="box venue">
-            <p><%= event.venue %></p>
-        </div>
-        <div class="box button tickets">
-            <a href="<%= event.urlToBuyTickets %>"><button class="button-tickets">Tickets</button></a>
-        </div>
-        <div class="box button saveaseat">
-            <button class="button-saveaseat">Delete</button>
-        </div>
-    </div>
