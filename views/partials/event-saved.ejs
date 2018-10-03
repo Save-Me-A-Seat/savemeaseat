@@ -33,16 +33,16 @@
                 <p><%= event.hour + ':' + event.minute + ' ' + event.am_pm %></p>
             </div>
             <div class="saved name">
-                    <p>Drake</p>
+                    <p><%= event.artistName %></p>
                 </div>
             <div class="saved lineup">
                 <p><%= event.lineup %></p>
             </div>
             <div class="saved city">
-                <p>Seattle, WA</p>
+                <p><%= event.city + ', ' + event.state %></p>
             </div>
             <div class="saved country">
-                <p>United States</p>
+                <p><%= event.country %></p>
             </div>
             <div class="saved venue">
                 <p><%= event.venue %></p>
