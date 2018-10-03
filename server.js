@@ -58,6 +58,22 @@ function Event(event) {
   this.ticketAvailability = event.offers.length > 0 && event.offers[0].status === 'available' ? true : false;
 }
 
+function FromDatabase(event) {
+  this.month = event.month;
+  this.day = event.day;
+  this.year = event.year;
+  this.hour = event.hour;
+  this.minute = event.minute;
+  this.am_pm = event.am_pm;
+  this.city = event.city;
+  this.state = event.state;
+  this.country = event.country;
+  this.venue = event.venue;
+  this.lineup = event.lineup;
+  this.urlToBuyTickets = event.url;
+  this.ticketAvailability = event.ticket_available;
+}
+
 // HELPER FUNCTIONS!!!!
 
 // Renders homepage depending on if saved seats is empty
@@ -66,7 +82,15 @@ function searchOrSavedSeats(request, response) {
   return client.query(SQL)
     .then(seatCheck => {
       if (seatCheck.rowCount > 0) {
-        response.redirect('/saved-seats')
+        console.log('+++++++++++++++++++++++++++++++++++++++++++');
+        console.log('seatCheck.rows: ', seatCheck.rows);
+        console.log('+++++++++++++++++++++++++++++++++++++++++++');
+        const eventList = seatCheck.rows.map(event => new FromDatabase(event))
+
+        console.log('*******************************************');
+        console.log(eventList);
+        console.log('*******************************************');
+        response.render('pages/saved-seats', {eventList: eventList});
       } else {
         response.render('pages/index', { eventList: [] })
       }

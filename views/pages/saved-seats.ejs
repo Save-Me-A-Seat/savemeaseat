@@ -11,7 +11,11 @@
 
 
         <div class="saved-seats">
-            <!-- here you include event.js (need to change a button to 'delete') -->
+            <% eventList.forEach((event) => { %>
+                <article>
+                  <%- include('../partials/event', {event: event}) %>
+                </article>
+              <% }) %>
         </div>
 
         
