@@ -201,6 +201,6 @@ function numberToMonth(monthNumber)
   case '12':
     return 'December';
   default:
-    return '';
+    return 'December';
   }
 }
