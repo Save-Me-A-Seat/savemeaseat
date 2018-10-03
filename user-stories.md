@@ -2,7 +2,9 @@ Developing an app called 'Save Me a Seat' that allows users to search by their f
 
 -- AS A USER --
 
-As a user, I want to open this app to a homepage and see a search bar and a logo/visual of the app.
+As a user, I want to open this app to a homepage with a logo/visual of the app.
+
+As a user, if I already have saved seats in my database, I'd like the homepage to be my database. If I don't I'd like to be taken to the search bar.
 
 As a user, I want to be able to type in the artist's name and submit that information with a button.
 
