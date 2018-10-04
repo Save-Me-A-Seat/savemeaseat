@@ -29,9 +29,6 @@ app.use(express.static('./public'));
 app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 
-// Proof of life
-app.listen(PORT, () => console.log(`Listening on port: ${process.env.PORT}`));
-
 app.get('/index', goToMainPage);
 app.get('/saved-seats', goToSavedSeatsPage);
 app.get('/about-us', goToAboutPage);
@@ -42,13 +39,16 @@ app.post('/add-saved-seats', addToSavedSeats);
 app.delete('/delete/:id', deleteFromDatabase);
 app.get('*', (request, response) => response.status(404).send('This route does not exist'));
 
+// Proof of life
+app.listen(PORT, () => console.log(`Listening on port: ${process.env.PORT}`));
+
 // Constructor function to pass API data through
 function Event(event) {
   this.artistName = event.lineup ? event.lineup[0] : 'Not available';
   this.month = event.datetime ? numberToMonth(event.datetime.slice(5, 7)) : 'Not available';
   this.day = event.datetime ? event.datetime.slice(8, 10) : 'Not available';
   this.year = event.datetime ? event.datetime.slice(0, 4) : 'Not available';
-  this.hour = event.datetime ? (parseInt(event.datetime.slice(11, 13)) - 12).toString() : 'Not available';
+  this.hour = event.datetime ? formatHour(event.datetime) : 'Not available';
   this.minute = event.datetime ? event.datetime.slice(14,16) : 'Not available';
   this.amOrPm = !event.datetime ? 'Not available' : parseInt(event.datetime.slice(11, 13)) < 12 ? 'AM' : 'PM';
   this.city = event.venue.city ? event.venue.city : 'Not available';
@@ -155,6 +155,16 @@ function deleteFromDatabase(request, response) {
   client.query(SQL, value)
     .then(response.redirect('/saved-seats'))
     .catch(error => handleError(error, response));
+}
+
+function formatHour(hour) {
+  const hourAsANumber = hour.slice(11, 13);
+  if (hourAsANumber > 13) {
+    const newHour = hourAsANumber - 12;
+    return newHour.toString();
+  } else {
+    return hour.slice(11, 13);
+  }
 }
 
 //----------------------------------------------------------------
