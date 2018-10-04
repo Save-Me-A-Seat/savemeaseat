@@ -116,16 +116,27 @@ function searchForArtist(request, response) {
 
   superagent.get(url)
     .then(upcomingEvents => upcomingEvents.body.map(event => new Event(event)))
-    .then(eventList => response.render('pages/index', { eventList: eventList }))
-    .catch(error => handleError(error, response));
+    .then(eventList => {
+      if (eventList.length > 0)
+      {
+        response.render('pages/index', { eventList: eventList })
+      }
+      else
+      {
+        response.render('pages/index', { eventList: `There are no available seats for '${request.query.search}'` })
+      }
+    })
+    .catch(error => {
+      response.render('pages/index', { eventList: `There are no available seats for '${request.query.search}'` })
+      handleError(error, response)
+    });
 }
 
 // Error handling
 const handleError = (error, response) => console.log(error);
 
 function addToSavedSeats(request, response) {
-  console.log('*********');
-  console.log(request.body);
+
   let {artistName, month, day, year, hour, minute, am_pm, city, state, country, venue, lineup, url, ticket_available} = request.body;
 
   const SQL = 'INSERT INTO events (artistName, month, day, year, hour, minute, am_pm, city, state, country, venue, lineup, url, ticket_available) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14);';
@@ -138,8 +149,7 @@ function addToSavedSeats(request, response) {
 
 // Deletes an event from the database
 function deleteFromDatabase(request, response) {
-  console.log('**********************************');
-  console.log('deleting from the datbase:', request.params.id);
+
   const SQL = 'DELETE FROM events WHERE id=$1;';
   const value = [request.params.id];
   client.query(SQL, value)

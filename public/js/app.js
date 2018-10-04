@@ -1,6 +1,6 @@
 'use strict';
 
-
+// $('.no-upcoming-events').hide();
 
 //---------------------------------------------------------------------------------------
 //          MENU LOGIC
@@ -92,6 +92,15 @@ $('.button-saveaseat').on('click', function(event)
   // console.log(event);
 })
 
+// Find events
+$('#button-find').on('click', function(event)
+{
+
+  
+    // $('.no-upcoming-events').show();
+  
+
+})
 
 
 /* Variable to store the back end URL. This allows the client to make requests to *your* deployed back end, no one else's */
