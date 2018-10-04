@@ -52,7 +52,7 @@ function Event(event) {
   this.minute = event.datetime ? event.datetime.slice(14,16) : 'Not available';
   this.amOrPm = !event.datetime ? 'Not available' : parseInt(event.datetime.slice(11, 13)) < 12 ? 'AM' : 'PM';
   this.city = event.venue.city ? event.venue.city : 'Not available';
-  this.state = event.venue.region ? event.venue.region : 'Not available';
+  this.state = event.venue.region ? event.venue.region : '';
   this.country = event.venue.country ? event.venue.country : 'Not available' ;
   this.venue = event.venue.name ? event.venue.name : 'Not available' ;
   this.lineup = event.lineup ? event.lineup.reduce((accumulator, currentValue) => accumulator + `, ${currentValue}`) : 'Not available';
