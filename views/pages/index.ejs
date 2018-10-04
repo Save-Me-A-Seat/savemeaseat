@@ -23,7 +23,7 @@
             </article>
           <% }) %>
           <% } else if ((typeof(eventList) === 'object') && (eventList.length === 0)){ %>
-            <p class="no-upcoming-events"> No seats available for that artist </p>
+            <p class="no-upcoming-events"> <%= eventList %></p>
             <% } else { %>
             <p class="no-upcoming-events"> <%= eventList %></p>
            <% } %>
