@@ -16,11 +16,17 @@
         </div>
 
         <div class="search-results">
+        <% if ((typeof(eventList) === 'object') && (eventList.length > 0)) { %>
           <% eventList.forEach((event) => { %>
             <article>
               <%- include('../partials/event', {event: event}) %>
             </article>
           <% }) %>
+          <% } else if ((typeof(eventList) === 'object') && (eventList.length === 0)){ %>
+            <p class="no-upcoming-events"> No seats available for that artist </p>
+            <% } else { %>
+            <p class="no-upcoming-events"> <%= eventList %></p>
+           <% } %>
         </div>
 
     </main>
