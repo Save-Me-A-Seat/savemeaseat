@@ -16,11 +16,15 @@
         </div>
 
         <div class="search-results">
+        <% if (eventList.length !== 0) { %>
           <% eventList.forEach((event) => { %>
             <article>
               <%- include('../partials/event', {event: event}) %>
             </article>
           <% }) %>
+          <% } else { %>
+            <p> No upcoming events </p>
+           <% } %>
         </div>
 
     </main>
