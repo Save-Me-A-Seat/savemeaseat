@@ -1,0 +1,33 @@
+.about-us {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.about-us h1 {
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.about-us h2 {
+  font-size: 1.3em;
+  clear: both;
+}
+
+.about-us img {
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+@media only screen and (min-width: 400px) {
+  .about-us img {
+    width: 100%;
+    max-width: 200px;
+    margin: 0 1em 1em 0;
+    float: left;
+  }
+
+  main {
+    padding: 0 2em;
+  }
+
+}
