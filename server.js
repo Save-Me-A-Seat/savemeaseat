@@ -112,7 +112,7 @@ function showSavedSeats(request, response) {
 
 // Searches for the artist
 function searchForArtist(request, response) {
-  const url = `https://rest.bandsintown.com/artists/${request.query.search}/events?app_id=${process.env.BANDS_IN_TOWN_KEY}&date=upcoming`;
+  const url = `https://rest.bandsintown.com/artists/${request.query.search.trim()}/events?app_id=${process.env.BANDS_IN_TOWN_KEY}&date=upcoming`;
 
   superagent.get(url)
     .then(upcomingEvents => upcomingEvents.body.map(event => new Event(event)))
