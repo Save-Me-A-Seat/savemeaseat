@@ -364,3 +364,18 @@ header
         margin: 0 auto;
     }
  }
+
+
+
+ .no-upcoming-events
+ {
+     text-align: center;
+     color: #5749CE;
+ }
+
+ .about-us p
+ {
+     color: #5749CE;
+     font-size: 1.5em;
+
+ }
