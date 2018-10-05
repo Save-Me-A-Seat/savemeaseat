@@ -198,6 +198,8 @@ p
     box-shadow: -5px 5px 17px -3px rgba(0,0,0,0.75);
 
     margin: 1em 1em;
+
+    background-color: #5749CE; 
 }
 
 .saved.data.day
@@ -303,7 +305,7 @@ p
         
 header
 {
-    background-color: blue;
+    background-color: #5749CE;
     z-index: 2;
     padding-right: 1em;
 }
@@ -328,7 +330,7 @@ header
   
   #footer-text
   {
-    color: white;
+    color: #5749CE;
     opacity: 0.75;
   }
   
