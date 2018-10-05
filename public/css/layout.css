@@ -1,3 +1,26 @@
+.search-page label {
+  font-size: 2em;
+}
+
+#search-input-field {
+  margin-top: 1em;
+  width: 90%;
+  border-radius: 5px;
+  border: none;
+  font-size: 1.3em;
+  text-indent: .5em;
+}
+
+#button-find {
+  width: 90%;
+  border-radius: 5px;
+  border: none;
+  font-size: 1.3em;
+  padding: .3em;
+  background-color: #FF0053;
+  color: white;
+}
+
 .about-us {
   max-width: 960px;
   margin: 0 auto;
