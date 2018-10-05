@@ -11,10 +11,6 @@
         <div class="box venue">
             <p><%= event.venue %></p>
         </div>
-        <div class="box button tickets">
-            <a href="<%= event.urlToBuyTickets %>"><button class="button-tickets">Tickets</button></a>
-        </div>
-
 
     <form action="/add-saved-seats" method= "post">
         <input type="hidden" name="artistName" value="<%= event.artistName %>">
@@ -32,7 +28,7 @@
         <input type="hidden" name="url" value="<%= event.urlToBuyTickets %>">
         <input type="hidden" name="ticket_available" value="<%= event.ticketAvailability %>">
         <div class="box button saveaseat">
-        <button type="submit" class="button-saveaseat">Save</button>
+        <button type="submit" class="button-saveaseat">Save Me A Seat</button>
         </div>
     </form>
 
