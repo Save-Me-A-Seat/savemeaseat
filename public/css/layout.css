@@ -29,10 +29,17 @@
 .about-us h1 {
   text-align: center;
   font-size: 1.5em;
+  margin-top: 3em;
+}
+
+.about-us section {
+  overflow: auto;
+  margin-top: 2em;
 }
 
 .about-us h2 {
   font-size: 1.3em;
+  text-align: center;
   clear: both;
 }
 
@@ -42,6 +49,10 @@
 }
 
 @media only screen and (min-width: 400px) {
+  about-us h2 {
+    text-align: left;
+  }
+
   .about-us img {
     width: 100%;
     max-width: 200px;
