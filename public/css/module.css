@@ -39,3 +39,13 @@ li
   font-family: 'Bungee Inline', cursive;
   color: #5749CE;
 }
+
+#saved-button-tickets
+{
+  font-size: 1.1em;
+
+}
+#saved-button-delete
+{
+  font-size: 1.1em;
+}
