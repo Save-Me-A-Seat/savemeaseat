@@ -11,8 +11,8 @@
         <div class="box venue">
             <p><%= event.venue %></p>
         </div>
-
-    <form action="/add-saved-seats" method= "post">
+        <div class="box button saveaseat">
+    <form action="/add-saved-seats" method= "post" class="search-hidden-form">
         <input type="hidden" name="artistName" value="<%= event.artistName %>">
         <input type="hidden" name="month" value="<%= event.month %>">
         <input type="hidden" name="day" value="<%= event.day %>">
@@ -27,7 +27,7 @@
         <input type="hidden" name="lineup" value="<%= event.lineup %>">
         <input type="hidden" name="url" value="<%= event.urlToBuyTickets %>">
         <input type="hidden" name="ticket_available" value="<%= event.ticketAvailability %>">
-        <div class="box button saveaseat">
+        
         <button type="submit" class="button-saveaseat">Save Me A Seat</button>
         </div>
     </form>

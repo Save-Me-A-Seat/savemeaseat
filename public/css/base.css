@@ -24,7 +24,8 @@ body
   margin: 0 auto;
 }
 
-main {
+main
+{
     margin-top: 3em;
 }
 
@@ -141,32 +142,36 @@ button
 
 .box.button.saveaseat
 {
-  grid-column: 3/4;
+  grid-column: 1/4;
   grid-row: 3;
 
   justify-self: center;
   display: table;
-  
 }
 
 .button-tickets
 {
     margin: 0 0 10px 0;
-    /* width: 80px; */
-    height: 30px;
+    width: 80px;
+    height: 50px;
+}
 
+.search-hidden-form
+{
+    width: 100%;
 }
 
 .button-saveaseat
 {
     margin: 0 0 10px 0;
-    width: 80px;
+    width: 200px;
     height: 30px;
 }
 
 p
 {
     margin: 0;
+    color: white;
 }
 
 /* EVENT PARTIAL FOR A SAVED PAGE */
@@ -193,6 +198,8 @@ p
     box-shadow: -5px 5px 17px -3px rgba(0,0,0,0.75);
 
     margin: 1em 1em;
+
+    background-color: #5749CE; 
 }
 
 .saved.data.day
@@ -298,7 +305,7 @@ p
         
 header
 {
-    background-color: blue;
+    background-color: #5749CE;
     z-index: 2;
     padding-right: 1em;
 }
@@ -323,7 +330,7 @@ header
   
   #footer-text
   {
-    color: darkorange;
+    color: #5749CE;
     opacity: 0.75;
   }
   
@@ -342,6 +349,7 @@ header
   {
     width: 80px;
   }
+
 
 @media only screen and (min-width: 500px) {
     main {
