@@ -1,5 +1,8 @@
 `use strict`;
 
+
+const iDontKnowHer = '../img/idontknowher.jpg';
+
 // Application dependencies
 const express = require('express');
 const superagent = require('superagent');
@@ -127,7 +130,7 @@ function searchForArtist(request, response) {
       }
     })
     .catch(error => {
-      response.render('pages/index', { eventList: `There are no available seats for '${request.query.search}'` })
+      response.render('pages/index', { eventList: `There are no results for '${request.query.search}'` })
       handleError(error, response)
     });
 }
