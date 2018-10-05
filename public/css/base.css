@@ -24,7 +24,8 @@ body
   margin: 0 auto;
 }
 
-main {
+main
+{
     margin-top: 3em;
 }
 
@@ -141,32 +142,36 @@ button
 
 .box.button.saveaseat
 {
-  grid-column: 3/4;
+  grid-column: 1/4;
   grid-row: 3;
 
   justify-self: center;
   display: table;
-  
 }
 
 .button-tickets
 {
     margin: 0 0 10px 0;
-    /* width: 80px; */
-    height: 30px;
+    width: 80px;
+    height: 50px;
+}
 
+.search-hidden-form
+{
+    width: 100%;
 }
 
 .button-saveaseat
 {
     margin: 0 0 10px 0;
-    width: 80px;
+    width: 200px;
     height: 30px;
 }
 
 p
 {
     margin: 0;
+    color: white;
 }
 
 /* EVENT PARTIAL FOR A SAVED PAGE */
@@ -323,7 +328,7 @@ header
   
   #footer-text
   {
-    color: darkorange;
+    color: white;
     opacity: 0.75;
   }
   
@@ -342,3 +347,10 @@ header
   {
     width: 80px;
   }
+
+
+
+  /* Button - find  */
+
+
+  
