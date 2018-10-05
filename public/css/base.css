@@ -349,4 +349,10 @@ header
         margin-left: auto;
         margin-right: auto;
     }
+
+    main.about-us {
+        max-width: 960px;
+        width: 90%;
+        margin: 0 auto;
+    }
  }
