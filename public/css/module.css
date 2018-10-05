@@ -9,3 +9,33 @@
   font-family: 'Bungee Inline', san-serif;
   font-size: 1.3em;
 }
+
+label
+{
+  font-family: 'Bungee Inline', cursive;
+  color: #5749CE;
+}
+
+.about-us h1
+{
+  font-family: 'Bungee Inline', cursive;
+  color: #5749CE;
+}
+
+.about-us h2
+{
+  font-family: 'Bungee Inline', cursive;
+  color: #5749CE;
+}
+
+li
+{
+  font-family: 'Bungee Inline', cursive;
+  color: #5749CE;
+}
+
+.menu-text.menu-text-expand
+{
+  font-family: 'Bungee Inline', cursive;
+  color: #5749CE;
+}
