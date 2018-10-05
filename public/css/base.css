@@ -351,8 +351,16 @@ header
   }
 
 
+@media only screen and (min-width: 500px) {
+    main {
+        width: 450px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 
-  /* Button - find  */
-
-
-  
+    main.about-us {
+        max-width: 960px;
+        width: 90%;
+        margin: 0 auto;
+    }
+ }
