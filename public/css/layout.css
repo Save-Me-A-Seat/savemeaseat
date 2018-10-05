@@ -21,6 +21,37 @@
   color: white;
 }
 
+#saved-button-delete {
+  width: 90%;
+  border-radius: 5px;
+  border: none;
+  font-size: 1.3em;
+  padding: .3em;
+  background-color: #FF0053;
+  color: white;
+}
+
+#saved-button-tickets
+{
+  width: 90%;
+  border-radius: 5px;
+  border: none;
+  font-size: 1.3em;
+  padding: .3em;
+  background-color: #FF0053;
+  color: white;
+}
+
+.button-saveaseat
+{
+  /* width: 90%; */
+  border-radius: 5px;
+  border: none;
+  font-size: 1.2em;
+  /* padding: .3em; */
+  background-color: #FF0053;
+  color: white;
+}
 .about-us {
   max-width: 960px;
   margin: 0 auto;
