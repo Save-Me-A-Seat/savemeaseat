@@ -1,12 +1,4 @@
 
-  span 
-  {
-    /* display: inline-block; */
-    /* vertical-align: middle; */
-    /* color: white; */
-    /* border: solid 1px black; */
-  }
-  
   ul 
   {
     display: block;
@@ -22,9 +14,6 @@
     width: 30px;
     height: 50px;
     text-align: right;
-
-    /* font-size: 2em; */
-    
   }
   
   .menu-close

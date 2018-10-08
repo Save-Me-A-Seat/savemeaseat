@@ -1,15 +1,9 @@
 <!DOCTYPE html>
 <html>
         <%- include('../partials/head') %>
-
 <body class="wrapper">
-
         <%- include('../partials/header') %>
-
     <main>
-
-
-
         <div class="saved-seats">
             <% if (typeof(eventList) !== 'string') { %>
                 <% eventList.forEach((event) => { %>
@@ -21,11 +15,7 @@
                 <p class="no-upcoming-events"><%= eventList %></p>
             <% } %>
         </div>
-
-        
     </main>
-
     <%- include('../partials/footer') %>
-
 </body>
 </html>

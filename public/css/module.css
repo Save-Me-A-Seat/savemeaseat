@@ -49,3 +49,62 @@ li
 {
   font-size: 1.1em;
 }
+
+.search-input
+{
+    text-align: center
+}
+
+#search-input-field
+{
+    display: block;
+    margin: 0 auto;
+    height: 2em;
+}
+
+.footer 
+{
+    text-align: center;
+}
+
+#footer-text
+  {
+    color: #5749CE;
+    opacity: 0.75;
+  }
+  
+  #footer-text-love
+  {
+      color: red;
+      opacity: 0.75;
+  }
+
+  .saved-seats
+  {
+    display: grid;
+  }
+
+  #button-find
+  {
+    width: 80px;
+  }
+
+  .no-upcoming-events
+  {
+      text-align: center;
+      color: #5749CE;
+  }
+ 
+  .about-us p
+  {
+      color: #5749CE;
+      font-size: 1.5em;
+  }
+ 
+  .idontknowher
+  {
+      margin-top: 1em;
+      height: 16em;
+      width: 100%;
+      border-radius: 1em;
+  }
