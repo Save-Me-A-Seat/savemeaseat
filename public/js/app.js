@@ -12,7 +12,7 @@
 
 function tongueMenuOpenOrClose()
 {
-  (document.querySelector('#tongue-menu-id').offsetWidth === 0) ? document.querySelector('#tongue-menu-id').style.width = '90%' : document.querySelector('#tongue-menu-id').style.width = '0%';
+  (document.querySelector('#tongue-menu-id').offsetWidth === 2) ? document.querySelector('#tongue-menu-id').style.width = '20em' : document.querySelector('#tongue-menu-id').style.width = '0em';
 }
 
 $('.tongue-menu-open-or-close').click(function()

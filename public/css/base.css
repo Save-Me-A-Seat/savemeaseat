@@ -1,4 +1,8 @@
+html
+{
+    
 
+}
 body 
 {
   font-family: 'Lato', sans-serif;
@@ -40,6 +44,7 @@ header
     z-index: 2;
     padding-right: 1em;
     height: 3em;
+    border-bottom: 1px solid #ff6978;
 }
 
 /* background: linear-gradient(354deg, #ff6978, #fffcf9, #b1ede8, #6d435a, #352d39); */
