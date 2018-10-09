@@ -107,6 +107,8 @@ li
       color: #fffcf9;
       font-size: 1em;
       margin-top: 1em;
+      overflow-x: hidden;
+      overflow-y: hidden;
   }
  
   .idontknowher
@@ -138,6 +140,5 @@ li
     max-width: 50%;
     border-radius: 50%;
     border: 1px solid #ff6978;
-    margin: 0 auto;
-    
+    justify-self: center;
   }
