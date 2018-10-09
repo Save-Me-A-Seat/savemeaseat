@@ -1,9 +1,14 @@
-.search-page label {
-  font-size: 2em;
+.search-page label
+{
+  font-size: 1em;
+  /* padding: 100px; */
 }
 
-#search-input-field {
+#search-input-field
+{
+  display: block;
   margin-top: 1em;
+  margin: 2em 2em;
   width: 90%;
   border-radius: 5px;
   border: none;
@@ -11,14 +16,26 @@
   text-indent: .5em;
 }
 
-#button-find {
+input#search-input-field
+{
+  margin: 1em 1em;
+}
+
+#button-find
+{
   width: 90%;
   border-radius: 5px;
   border: none;
   font-size: 1.3em;
   padding: .3em;
-  background-color: #FF0053;
+  background-color: #ff6978;
+  color: #352d39;
+}
+
+#button-find:hover
+{
   color: white;
+  border: 1px solid white;
 }
 
 #saved-button-delete {
@@ -27,8 +44,14 @@
   border: none;
   font-size: 1.3em;
   padding: .3em;
-  background-color: #FF0053;
+  background-color: #ff6978;
+  color: #352d39;
+}
+
+#saved-button-delete:hover
+{
   color: white;
+  border: 1px solid white;
 }
 
 #saved-button-tickets
@@ -42,6 +65,12 @@
   color: white;
 }
 
+#saved-button-tickets:hover
+{
+  color: white;
+  border: 1px solid white;
+}
+
 .button-saveaseat
 {
   /* width: 90%; */
@@ -49,9 +78,16 @@
   border: none;
   font-size: 1.2em;
   /* padding: .3em; */
-  background-color: #FF0053;
-  color: white;
+  background-color: #ff6978;
+  color: #352d39;
 }
+
+.button-saveaseat:hover
+{
+  color: white;
+  border: 1px solid white;
+}
+
 .about-us {
   max-width: 960px;
   margin: 0 auto;
@@ -80,7 +116,8 @@
 }
 
 @media only screen and (min-width: 400px) {
-  about-us h2 {
+  about-us h2
+  {
     text-align: left;
   }
 
@@ -91,8 +128,235 @@
     float: left;
   }
 
-  main {
+  main
+  {
     padding: 0 2em;
   }
+}
 
+.search-results
+{ 
+    display: grid;
+}
+
+.search-results
+{ 
+    display: grid;
+
+}
+
+.search-event
+{
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    grid-template-rows: 30% 30% 30%;
+    grid-gap: 10px;
+    padding: 5px;
+    overflow-wrap: normal;
+    border-radius: 1em;
+    box-shadow: -5px 5px 17px -3px rgba(0,0,0,0.75);
+    margin: 1em 1em;
+
+}
+
+.box.data.day
+{
+  grid-column: 1;
+  grid-row: 1/3;
+  
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.8em;
+}
+
+.box.data.month
+{
+  grid-column: 1;
+  grid-row: 2;
+  
+  text-align: center;
+  font-size: 1em;
+  justify-content: center;
+  vertical-align: middle; 
+}
+
+.box.city
+{
+  grid-column: 2/4;
+  grid-row: 1;
+
+  vertical-align: 0%;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.box.venue
+{
+  grid-column: 2/4;
+  grid-row: 2;
+
+  font-size: 0.8em;
+}
+
+.box.button.tickets
+{
+  grid-column: 2/3;
+  grid-row: 3;
+
+  justify-self: center;
+}
+
+.box.button.saveaseat
+{
+  grid-column: 1/4;
+  grid-row: 3;
+
+  justify-self: center;
+  display: table;
+}
+
+.button-tickets
+{
+    margin: 0 0 10px 0;
+    width: 80px;
+    height: 50px;
+}
+
+.search-hidden-form
+{
+    width: 100%;
+}
+
+.button-saveaseat
+{
+    margin: 0 0 10px 0;
+    width: 200px;
+    height: 30px;
+}
+
+.saved-event
+{
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+    grid-gap: 5px;
+    grid-gap: 10px;
+    padding: 10px;
+    overflow-wrap: normal;
+    border-radius: 1em;
+    box-shadow: -5px 5px 17px -3px rgba(0,0,0,0.75);
+    margin: 1em 1em;
+    background-color: #fffcf9; 
+}
+
+.saved.data.day
+{
+    grid-column: 1;
+    grid-row: 1/2;
+
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.8em;
+}
+
+.saved.data.month
+{
+    grid-column: 1; 
+    grid-row: 2;
+
+    text-align: center;
+    font-size: 1em;
+    justify-content: center;
+    vertical-align: middle;
+    /* font-weight: bold; */
+}
+
+.saved.data.year
+{
+    grid-column: 1;
+    grid-row: 3;
+
+    text-align: center;
+}
+ 
+.saved.lineup
+{
+    grid-column: 2/4;
+    grid-row: 2;
+}
+
+.saved.city
+{
+    grid-column: 2;
+    grid-row: 4;
+}
+
+
+
+.saved.country
+{
+    grid-column: 3;
+    grid-row: 4;
+
+
+}
+
+.saved.data.time
+{
+    grid-column: 1;
+    grid-row: 4;
+
+    text-align: center;
+}
+
+.saved.venue
+{
+    grid-column: 2/4;
+    grid-row: 3;
+
+    font-size: 0.9em;
+}
+
+.saved.name
+{
+    grid-column: 2/4;
+    grid-row: 1;
+
+    font-weight: bold;
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+.saved-button-tickets
+{
+    grid-column: 3;
+    grid-row: 5;
+}
+          
+.saved-button-delete
+{
+    grid-column: 2; 
+    grid-row: 5;
+}
+     
+#saved-button-tickets
+{
+    margin: 0 0 0 0;
+}
+
+#saved-button-delete
+{
+    margin: 0 0 0 0;
+}
+
+button#saved-button-tickets
+{
+  background-color: #ff6978;
+  color: #352d39;
+}
+
+button:hover
+{
+  color: white;
+  border: 1px solid white;
 }

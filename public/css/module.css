@@ -1,5 +1,5 @@
 .search-event {
-  background-color: #5749CE;
+  background-color: #fffcf9;
 }
 
 .logo {
@@ -8,24 +8,25 @@
   margin-left: .5em;
   font-family: 'Bungee Inline', san-serif;
   font-size: 1.3em;
+  color: #fffcf9;
 }
 
 label
 {
   font-family: 'Bungee Inline', cursive;
-  color: #5749CE;
+  color: #fffcf9;
 }
 
 .about-us h1
 {
   font-family: 'Bungee Inline', cursive;
-  color: #5749CE;
+  color: #fffcf9;
 }
 
 .about-us h2
 {
   font-family: 'Bungee Inline', cursive;
-  color: #5749CE;
+  color: #fffcf9;
 }
 
 li
@@ -49,3 +50,75 @@ li
 {
   font-size: 1.1em;
 }
+
+.search-input
+{
+    text-align: center
+}
+
+#search-input-field
+{
+    display: block;
+    margin: 0 auto;
+    height: 2em;
+}
+
+.footer 
+{
+    text-align: center;
+}
+
+#footer-text
+  {
+    color: #352d39;
+    opacity: 0.75;
+  }
+  
+  #footer-text-love
+  {
+      color: red;
+      opacity: 0.75;
+  }
+
+  .saved-seats
+  {
+    display: grid;
+  }
+
+  #button-find
+  {
+    width: 80px;
+  }
+
+  .no-upcoming-events
+  {
+      text-align: center;
+      color: #5749CE;
+      font-weight: bold;
+      margin: 1em 1em;
+  }
+ 
+  .about-us p
+  {
+      color: #5749CE;
+      font-size: 1.5em;
+  }
+ 
+  .idontknowher
+  {
+      margin-top: 1em;
+      height: 16em;
+      width: 100%;
+      border-radius: 50%;
+  }
+
+  main.about-us p
+  {
+    color: #fffcf9;
+  }
+
+  img
+  {
+    margin: 1em 0 1em 0;
+    width: 100%;
+  }

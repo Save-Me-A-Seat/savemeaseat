@@ -1,8 +1,5 @@
 `use strict`;
 
-
-const iDontKnowHer = '../img/idontknowher.jpg';
-
 // Application dependencies
 const express = require('express');
 const superagent = require('superagent');

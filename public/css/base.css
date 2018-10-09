@@ -1,16 +1,8 @@
-*
-{
-    /* outline: solid 1px orange; */
-}
 
 body 
 {
-  /* padding: 10px 10px 0px 10px; */
   font-family: 'Lato', sans-serif;
-   
-  background-color: #FEE140;
-  /* background-image: linear-gradient(90deg, #FEE140 0%, #FA709A 100%); */
-     
+  background-color: #6d435a;  
   padding-bottom: 2em;
   overflow-x: hidden;
 }
@@ -29,30 +21,6 @@ main
     margin-top: 3em;
 }
 
-.nav-menu
-{
-/*   grid-row: 1; */
-}
-
-
-.footer 
-{
-    text-align: center;
-}
-
-
-.search-input
-{
-    text-align: center
-}
-
-#search-input-field
-{
-    display: block;
-    margin: 0 auto;
-    height: 2em;
-}
-
 button
 {
     margin: 10px;
@@ -60,262 +28,21 @@ button
     width: 90%;
 }
 
-
-.search-results
-{ 
-    display: grid;
-}
-
-/* EVENT.EJS DATA FOR A SEARCH PAGE */
-
-.search-results
-{ 
-    display: grid;
-
-}
-
-/* EVENT.EJS DATA FOR A SEARCH PAGE */
-
-.search-event
-{
-    display: grid;
-    grid-template-columns: 30% 30% 30%;
-    grid-template-rows: 30% 30% 30%;
-    grid-gap: 10px;
-
-    padding: 5px;
-
-    
-    overflow-wrap: normal;
-    border-radius: 1em;
-    box-shadow: -5px 5px 17px -3px rgba(0,0,0,0.75);
-
-    margin: 1em 1em;
-}
-
-.box.data.day
-{
-  grid-column: 1;
-  grid-row: 1/3;
-  
-  text-align: center;
-  font-weight: bold;
-  font-size: 1.8em;
-}
-
-.box.data.month
-{
-  grid-column: 1;
-  grid-row: 2;
-  
-  text-align: center;
-  font-size: 1em;
-  justify-content: center;
-  vertical-align: middle; 
-}
-
-.box.city
-{
-  grid-column: 2/4;
-  grid-row: 1;
-
-  vertical-align: 0%;
-  font-weight: bold;
-  font-size: 1.5em;
-}
-
-.box.venue
-{
-  grid-column: 2/4;
-  grid-row: 2;
-
-  font-size: 0.8em;
-}
-
-.box.button.tickets
-{
-  grid-column: 2/3;
-  grid-row: 3;
-
-  justify-self: center;
-}
-
-.box.button.saveaseat
-{
-  grid-column: 1/4;
-  grid-row: 3;
-
-  justify-self: center;
-  display: table;
-}
-
-.button-tickets
-{
-    margin: 0 0 10px 0;
-    width: 80px;
-    height: 50px;
-}
-
-.search-hidden-form
-{
-    width: 100%;
-}
-
-.button-saveaseat
-{
-    margin: 0 0 10px 0;
-    width: 200px;
-    height: 30px;
-}
-
 p
 {
     margin: 0;
-    color: white;
+    color: #352d39;
 }
 
-/* EVENT PARTIAL FOR A SAVED PAGE */
-
-*
-{
-    /* outline: 1px black solid; */
-}
-
-.saved-event
-{
-    display: grid;
-    grid-template-columns: 30% 30% 30%;
-    grid-template-rows: 20% 20% 20% 20% 20%;
-    grid-gap: 5px;
-
-    grid-gap: 10px;
-
-    padding: 10px;
-
-    
-    overflow-wrap: normal;
-    border-radius: 1em;
-    box-shadow: -5px 5px 17px -3px rgba(0,0,0,0.75);
-
-    margin: 1em 1em;
-
-    background-color: #5749CE; 
-}
-
-.saved.data.day
-{
-    grid-column: 1;
-    grid-row: 1/2;
-
-    text-align: center;
-    font-weight: bold;
-    font-size: 1.8em;
-}
-
-.saved.data.month
-{
-    grid-column: 1; 
-    grid-row: 2;
-
-    text-align: center;
-    font-size: 1em;
-    justify-content: center;
-    vertical-align: middle;
-    /* font-weight: bold; */
-}
-
-.saved.data.year
-{
-    grid-column: 1;
-    grid-row: 3;
-
-    text-align: center;
-}
- 
-.saved.lineup
-{
-    grid-column: 2/4;
-    grid-row: 2;
-}
-
-.saved.city
-{
-    grid-column: 2;
-    grid-row: 4;
-}
-
-
-
-.saved.country
-{
-    grid-column: 3;
-    grid-row: 4;
-
-
-}
-
-.saved.data.time
-{
-    grid-column: 1;
-    grid-row: 4;
-
-    text-align: center;
-}
-
-.saved.venue
-{
-    grid-column: 2/4;
-    grid-row: 3;
-
-    font-size: 0.9em;
-}
-
-.saved.name
-{
-    grid-column: 2/4;
-    grid-row: 1;
-
-    font-weight: bold;
-    font-size: 1.2em;
-    line-height: 1.5;
-}
-
-.saved-button-tickets
-{
-    grid-column: 3;
-    grid-row: 5;
-}
-          
-.saved-button-delete
-{
-    grid-column: 2; 
-    grid-row: 5;
-    
-}
-     
-#saved-button-tickets
-{
-    margin: 0 0 0 0;
-}
-
-#saved-button-delete
-{
-    margin: 0 0 0 0;
-}
-        
 header
 {
-    background-color: #5749CE;
+    background-color: #352d39;
     z-index: 2;
     padding-right: 1em;
+    height: 3em;
 }
 
-
-
-/*-----------------------------------*/
-  /* FOOTER - "Made with love by ..."  */
-  /* static, stays on a bottom */
-  
+/* background: linear-gradient(354deg, #ff6978, #fffcf9, #b1ede8, #6d435a, #352d39); */
   footer
   {
     /* position: fixed; */
@@ -328,29 +55,6 @@ header
     margin-top: 5em;
   }
   
-  #footer-text
-  {
-    color: #5749CE;
-    opacity: 0.75;
-  }
-  
-  #footer-text-love
-  {
-      color: red;
-      opacity: 0.75;
-  }
-
-  .saved-seats
-  {
-    display: grid;
-  }
-
-  #button-find
-  {
-    width: 80px;
-  }
-
-
 @media only screen and (min-width: 500px) {
     main {
         width: 450px;
@@ -363,26 +67,4 @@ header
         width: 90%;
         margin: 0 auto;
     }
- }
-
-
-
- .no-upcoming-events
- {
-     text-align: center;
-     color: #5749CE;
- }
-
- .about-us p
- {
-     color: #5749CE;
-     font-size: 1.5em;
- }
-
- .idontknowher
- {
-     margin-top: 1em;
-     height: 16em;
-     width: 100%;
-     border-radius: 1em;
  }

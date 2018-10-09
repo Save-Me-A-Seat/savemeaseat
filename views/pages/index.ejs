@@ -2,11 +2,8 @@
 <html>
         <%- include('../partials/head') %>
 <body class="wrapper">
-
         <%- include('../partials/header') %>
-
     <main class="search-page">
-
         <div class="search-input">
             <form id="search-form" action="/search" method="GET">
                 <label for="search">Search for an artist</label>
@@ -14,7 +11,6 @@
                 <button id="button-find" type="submit">Find</button>
             </form>
         </div>
-
         <div class="search-results">
         <% if ((typeof(eventList) === 'object') && (eventList.length > 0)) { %>
           <% eventList.forEach((event) => { %>
@@ -24,15 +20,12 @@
           <% }) %>
           <% } else if ((typeof(eventList) === 'object') && (eventList.length === 0)){ %>
             <p class="no-upcoming-events"> <%= eventList %></p>
-            <!-- <img class="idontknowher" src="../img/idontknowher.jpg"> -->
             <% } else { %>
             <p class="no-upcoming-events"> <%= eventList %></p>
             <img class="idontknowher" src="../img/idontknowher.jpg">
            <% } %>
         </div>
-
     </main>
-    
     <%- include('../partials/footer') %>
 </body>
 </html>
