@@ -33,3 +33,5 @@ As the developer, I want to build a 'Want us to save you a seat?' button for use
 As the developer, I want to provide a link that navigates users to where they can buy tickets for their saved events but only once they've saved it to their 'Saved Seats' database.
 
 As the developer, I want an engaging UI that visually attracts users to want to engage with our app and use it simply.
+
+![Interface](https://preview.ibb.co/cAxer9/savemeaseat.gif "User Interface")
