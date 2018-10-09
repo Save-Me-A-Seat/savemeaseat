@@ -27,18 +27,22 @@ label
 {
   font-family: 'Bungee Inline', cursive;
   color: #fffcf9;
+  /* color: #352d39; */
+  margin-bottom: 1em;
+  /* border: 1px solid #ff6978; */
+  text-shadow: -1px 0 #ff6978, 0 1px #ff6978, 1px 0 #ff6978, 0 -1px #ff6978;
 }
 
 li
 {
   font-family: 'Bungee Inline', cursive;
-  color: #5749CE;
+  color: #fffcf9;
 }
 
 .menu-text.menu-text-expand
 {
   font-family: 'Bungee Inline', cursive;
-  color: #5749CE;
+  color: #fffcf9;
 }
 
 #saved-button-tickets
@@ -93,32 +97,47 @@ li
   .no-upcoming-events
   {
       text-align: center;
-      color: #5749CE;
+      color: #fffcf9;
       font-weight: bold;
       margin: 1em 1em;
   }
  
   .about-us p
   {
-      color: #5749CE;
-      font-size: 1.5em;
+      color: #fffcf9;
+      font-size: 1em;
+      margin-top: 1em;
   }
  
   .idontknowher
   {
       margin-top: 1em;
       height: 16em;
-      width: 100%;
-      border-radius: 50%;
+      max-width: 90%;
+      border-radius: 10%;
+  }
+
+  main.about-us
+  {
+    margin-top: 1em;
+    display: grid;
+    align-content: center;
+    justify-content: center;
   }
 
   main.about-us p
   {
     color: #fffcf9;
+    margin: 0 1em 0 1em;
   }
 
   img
   {
-    margin: 1em 0 1em 0;
-    width: 100%;
+    display: block;
+    /* margin: 1em 0 1em 0; */
+    max-width: 50%;
+    border-radius: 50%;
+    border: 1px solid #ff6978;
+    margin: 0 auto;
+    
   }

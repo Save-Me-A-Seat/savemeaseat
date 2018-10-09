@@ -19,6 +19,21 @@
 input#search-input-field
 {
   margin: 1em 1em;
+  transition: 0.3s;
+}
+
+input#search-input-field:hover
+{
+  -webkit-box-shadow: 0px 10px 50px -10px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 10px 50px -10px rgba(0,0,0,0.75);
+  box-shadow: 0px 10px 50px -10px rgba(0,0,0,0.75);
+}
+
+input#search-input-field:focus
+{
+  -webkit-box-shadow: 0px 10px 50px -10px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 10px 50px -10px rgba(0,0,0,0.75);
+  box-shadow: 0px 10px 50px -10px rgba(0,0,0,0.75);
 }
 
 #button-find
@@ -30,15 +45,16 @@ input#search-input-field
   padding: .3em;
   background-color: #ff6978;
   color: #352d39;
+  transition: 0.3s;
 }
 
 #button-find:hover
 {
   color: white;
-  border: 1px solid white;
 }
 
-#saved-button-delete {
+#saved-button-delete
+{
   width: 90%;
   border-radius: 5px;
   border: none;
@@ -46,12 +62,13 @@ input#search-input-field
   padding: .3em;
   background-color: #ff6978;
   color: #352d39;
+  transition: 0.3s;
 }
 
 #saved-button-delete:hover
 {
   color: white;
-  border: 1px solid white;
+
 }
 
 #saved-button-tickets
@@ -63,29 +80,27 @@ input#search-input-field
   padding: .3em;
   background-color: #FF0053;
   color: white;
+  transition: 0.3s;
 }
 
 #saved-button-tickets:hover
 {
   color: white;
-  border: 1px solid white;
 }
 
 .button-saveaseat
 {
-  /* width: 90%; */
   border-radius: 5px;
   border: none;
   font-size: 1.2em;
-  /* padding: .3em; */
   background-color: #ff6978;
   color: #352d39;
+  transition: 0.3s;
 }
 
 .button-saveaseat:hover
 {
   color: white;
-  border: 1px solid white;
 }
 
 .about-us {
@@ -357,6 +372,11 @@ button#saved-button-tickets
 
 button:hover
 {
-  color: white;
-  border: 1px solid white;
+  /* color: white; */
+  /* border: 1px solid white; */
+  -webkit-box-shadow: inset 0px 10px 53px -15px rgba(0,0,0,1);
+  -moz-box-shadow: inset 0px 10px 53px -15px rgba(0,0,0,1);
+  box-shadow: inset 0px 10px 53px -15px rgba(0,0,0,1);
 }
+
+
