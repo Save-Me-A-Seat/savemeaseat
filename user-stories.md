@@ -34,4 +34,4 @@ As the developer, I want to provide a link that navigates users to where they ca
 
 As the developer, I want an engaging UI that visually attracts users to want to engage with our app and use it simply.
 
-![Interface](https://preview.ibb.co/cAxer9/savemeaseat.gif "User Interface")
+![Interface](https://image.ibb.co/fVZg4U/savemeaseat.gif)
