@@ -1,58 +1,23 @@
 'use strict';
 
-// $('.no-upcoming-events').hide();
-
 //---------------------------------------------------------------------------------------
 //          MENU LOGIC
 //
-// Included code from this article:
+// Previously included code from this article:
 // https://stackoverflow.com/questions/48614124/adding-another-nav-item-using-javascript-and-css
 //
+// Now all content is unique.
 //
 //---------------------------------------------------------------------------------------
 
-let Menu =
+function tongueMenuOpenOrClose()
 {
-  el:
-  {
-    menu: $('.menu'),
-    menuTop: $('.menu-top'),
-    menuClose: $('.menu-close'),
-    menuMiddle: $('.menu-middle'),
-    menuBottom: $('.menu-bottom'),
-    menuText: $('.menu-text')
-  },
+  (document.querySelector('#tongue-menu-id').offsetWidth === 0) ? document.querySelector('#tongue-menu-id').style.width = '90%' : document.querySelector('#tongue-menu-id').style.width = '0%';
+}
 
-  init: function()
-  {
-    Menu.bindUIactions();
-  },
-
-  bindUIactions: function()
-  {
-    Menu.el.menu
-      .on(
-        'click',
-        function(event) {
-          Menu.activateMenu(event);
-          event.preventDefault();
-        }
-      );
-  },
-
-  activateMenu: function()
-  {
-    Menu.el.menuTop.toggleClass('menu-top-expand expand');
-    Menu.el.menuMiddle.toggleClass('menu-middle-expand expand');
-    Menu.el.menuBottom.toggleClass('menu-bottom-expand expand');
-    Menu.el.menuText.toggleClass('menu-text-expand');
-    Menu.el.menuClose.toggleClass('menu-close-visible');
-  }
-};
-
-//Stop menu item click closing the menu
-$('.menu .menu-global').click(function(e) {
-  e.stopPropagation();
+$('.tongue-menu-open-or-close').click(function()
+{
+  let substitute = $(this).clone(true);
+  $(this).after(substitute);
+  $(this).remove();
 });
-
-Menu.init();

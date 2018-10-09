@@ -2,7 +2,7 @@
 body 
 {
   font-family: 'Lato', sans-serif;
-  background-color: #FEE140;  
+  background-color: #6d435a;  
   padding-bottom: 2em;
   overflow-x: hidden;
 }
@@ -31,16 +31,18 @@ button
 p
 {
     margin: 0;
-    color: white;
+    color: #352d39;
 }
 
 header
 {
-    background-color: #5749CE;
+    background-color: #352d39;
     z-index: 2;
     padding-right: 1em;
+    height: 3em;
 }
 
+/* background: linear-gradient(354deg, #ff6978, #fffcf9, #b1ede8, #6d435a, #352d39); */
   footer
   {
     /* position: fixed; */

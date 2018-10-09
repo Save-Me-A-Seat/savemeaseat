@@ -1,11 +1,14 @@
 .search-page label
 {
-  font-size: 2em;
+  font-size: 1em;
+  /* padding: 100px; */
 }
 
 #search-input-field
 {
+  display: block;
   margin-top: 1em;
+  margin: 2em 2em;
   width: 90%;
   border-radius: 5px;
   border: none;
@@ -13,14 +16,26 @@
   text-indent: .5em;
 }
 
-#button-find {
+input#search-input-field
+{
+  margin: 1em 1em;
+}
+
+#button-find
+{
   width: 90%;
   border-radius: 5px;
   border: none;
   font-size: 1.3em;
   padding: .3em;
-  background-color: #FF0053;
+  background-color: #ff6978;
+  color: #352d39;
+}
+
+#button-find:hover
+{
   color: white;
+  border: 1px solid white;
 }
 
 #saved-button-delete {
@@ -29,8 +44,14 @@
   border: none;
   font-size: 1.3em;
   padding: .3em;
-  background-color: #FF0053;
+  background-color: #ff6978;
+  color: #352d39;
+}
+
+#saved-button-delete:hover
+{
   color: white;
+  border: 1px solid white;
 }
 
 #saved-button-tickets
@@ -44,6 +65,12 @@
   color: white;
 }
 
+#saved-button-tickets:hover
+{
+  color: white;
+  border: 1px solid white;
+}
+
 .button-saveaseat
 {
   /* width: 90%; */
@@ -51,9 +78,16 @@
   border: none;
   font-size: 1.2em;
   /* padding: .3em; */
-  background-color: #FF0053;
-  color: white;
+  background-color: #ff6978;
+  color: #352d39;
 }
+
+.button-saveaseat:hover
+{
+  color: white;
+  border: 1px solid white;
+}
+
 .about-us {
   max-width: 960px;
   margin: 0 auto;
@@ -122,6 +156,7 @@
     border-radius: 1em;
     box-shadow: -5px 5px 17px -3px rgba(0,0,0,0.75);
     margin: 1em 1em;
+
 }
 
 .box.data.day
@@ -211,7 +246,7 @@
     border-radius: 1em;
     box-shadow: -5px 5px 17px -3px rgba(0,0,0,0.75);
     margin: 1em 1em;
-    background-color: #5749CE; 
+    background-color: #fffcf9; 
 }
 
 .saved.data.day
@@ -312,4 +347,16 @@
 #saved-button-delete
 {
     margin: 0 0 0 0;
+}
+
+button#saved-button-tickets
+{
+  background-color: #ff6978;
+  color: #352d39;
+}
+
+button:hover
+{
+  color: white;
+  border: 1px solid white;
 }
