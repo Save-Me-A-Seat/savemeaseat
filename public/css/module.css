@@ -142,3 +142,14 @@ li
     border: 1px solid #ff6978;
     justify-self: center;
   }
+
+  p {
+    letter-spacing: 1px;
+    line-height: 1.6;
+  }
+
+  #how-to-use {
+    color: #fffcf9;
+    text-align: center;
+    margin-bottom: 2em;
+  }
