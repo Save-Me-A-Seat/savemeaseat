@@ -6,7 +6,7 @@
 // Previously included code from this article:
 // https://stackoverflow.com/questions/48614124/adding-another-nav-item-using-javascript-and-css
 //
-// Now all content is unique.
+// Current content is unique.
 //
 //---------------------------------------------------------------------------------------
 
