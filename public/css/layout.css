@@ -386,11 +386,11 @@ button:hover
 section img
 {
   display: block;
-  margin: 0 auto;
+  margin: auto auto;
 }
 
-section *
+section p
 {
-  /* display: block; */
-  vertical-align: 50%;
+  display: block;
+  padding-top: 5%;
 }
