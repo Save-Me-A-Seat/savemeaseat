@@ -123,11 +123,11 @@ function searchForArtist(request, response) {
       }
       else
       {
-        response.render('pages/index', { eventList: `There are no available seats for '${request.query.search}'` })
+        response.render('pages/index', { eventList: `Sorry, there are no upcoming events for '${request.query.search}'` })
       }
     })
     .catch(error => {
-      response.render('pages/index', { eventList: `There are no results for '${request.query.search}'` })
+      response.render('pages/index', { eventList: `Sorry, there are no results for '${request.query.search}'` })
       handleError(error, response)
     });
 }
