@@ -48,8 +48,8 @@ li
 #saved-button-tickets
 {
   font-size: 1.1em;
-
 }
+
 #saved-button-delete
 {
   font-size: 1.1em;
@@ -76,6 +76,12 @@ li
   {
     color: #352d39;
     opacity: 0.75;
+    text-align: center;
+    position: fixed;
+    bottom: 2em;
+    display: block;
+    margin: 0 auto;
+    width: 100%;
   }
   
   #footer-text-love
@@ -122,7 +128,7 @@ li
   main.about-us
   {
     margin-top: 1em;
-    display: grid;
+    /* display: grid; */
     align-content: center;
     justify-content: center;
   }
@@ -152,4 +158,10 @@ li
     color: #fffcf9;
     text-align: center;
     margin-bottom: 2em;
+  }
+
+  footer {
+    position: absolute;
+    bottom: 2em;
+    /* margin-top: 4em; */
   }
