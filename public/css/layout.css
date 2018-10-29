@@ -105,7 +105,7 @@ input#search-input-field:focus
 
 .about-us {
   max-width: 960px;
-  margin: 0 auto;
+  margin: 10em auto;
 }
 
 .about-us h1 {
@@ -252,16 +252,20 @@ input#search-input-field:focus
 .saved-event
 {
     display: grid;
-    grid-template-columns: 30% 30% 30%;
-    grid-template-rows: 20% 20% 20% 20% 20%;
-    grid-gap: 5px;
-    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     padding: 10px;
     overflow-wrap: normal;
     border-radius: 1em;
     box-shadow: -5px 5px 17px -3px rgba(0,0,0,0.75);
     margin: 1em 1em;
     background-color: #fffcf9; 
+}
+
+.saved-event *
+{
+  align-self: center;
+  /* margin: -5px 0px -5px 0px; */
 }
 
 .saved.data.day
@@ -379,8 +383,14 @@ button:hover
   box-shadow: inset 0px 10px 53px -15px rgba(0,0,0,1);
 }
 
-main.about-us section
+section img
 {
-  display: grid;
-  
+  display: block;
+  margin: 0 auto;
+}
+
+section *
+{
+  /* display: block; */
+  vertical-align: 50%;
 }
